@@ -657,7 +657,7 @@ export const Home = () => {
             </p>
 
             <Link
-              to="/events"
+              to="/404"
               className="btn-primary"
               style={{ padding: '0.9rem 2.2rem', fontSize: '1.05rem' }}
             >
