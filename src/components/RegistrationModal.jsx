@@ -28,10 +28,11 @@ export const RegistrationModal = () => {
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
-        padding: '1rem',
-        background: 'rgba(5, 8, 16, 0.85)',
+        padding: '0.75rem',
+        background: 'rgba(5, 8, 16, 0.88)',
         backdropFilter: 'blur(12px)',
-        WebkitBackdropFilter: 'blur(12px)'
+        WebkitBackdropFilter: 'blur(12px)',
+        overflowY: 'auto'
       }}
       onClick={handleClose}
     >
@@ -39,13 +40,16 @@ export const RegistrationModal = () => {
         className="glass-panel animate-scale-in"
         style={{
           width: '100%',
-          maxWidth: '540px',
+          maxWidth: '520px',
+          maxHeight: '94vh',
+          maxHeight: '94dvh',
           background: '#0B101D',
           borderRadius: '20px',
           border: '1px solid rgba(255, 255, 255, 0.15)',
           boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.7)',
-          overflow: 'hidden',
-          position: 'relative'
+          overflowY: 'auto',
+          position: 'relative',
+          margin: 'auto'
         }}
         onClick={(e) => e.stopPropagation()}
       >
@@ -56,7 +60,11 @@ export const RegistrationModal = () => {
             borderBottom: '1px solid rgba(255, 255, 255, 0.08)',
             display: 'flex',
             alignItems: 'center',
-            justifyContent: 'space-between'
+            justifyContent: 'space-between',
+            position: 'sticky',
+            top: 0,
+            background: '#0B101D',
+            zIndex: 10
           }}
         >
           <div>
@@ -101,7 +109,7 @@ export const RegistrationModal = () => {
         </div>
 
         {/* Content Body */}
-        <div style={{ padding: '1.5rem' }}>
+        <div style={{ padding: 'clamp(1rem, 3vw, 1.5rem)' }}>
           {confirmedPass ? (
             /* Successful Registration Ticket Preview */
             <div className="animate-fade-in" style={{ textAlign: 'center' }}>

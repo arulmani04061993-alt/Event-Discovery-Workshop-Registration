@@ -270,12 +270,12 @@ export const RegistrationForm = ({ event, onSuccess, onCancel }) => {
       </div>
 
       {/* Modal Actions */}
-      <div style={{ display: 'flex', gap: '12px', marginTop: '0.5rem' }}>
+      <div style={{ display: 'flex', gap: '10px', marginTop: '0.5rem', flexWrap: 'wrap' }}>
         <button
           type="button"
           onClick={onCancel}
           className="btn-secondary"
-          style={{ flex: 1, padding: '0.75rem' }}
+          style={{ flex: '1 1 120px', padding: '0.75rem', justifyContent: 'center' }}
           disabled={isSubmitting}
         >
           Cancel
@@ -284,7 +284,7 @@ export const RegistrationForm = ({ event, onSuccess, onCancel }) => {
         <button
           type="submit"
           className="btn-primary"
-          style={{ flex: 1.5, padding: '0.75rem' }}
+          style={{ flex: '2 1 180px', padding: '0.75rem', justifyContent: 'center' }}
           disabled={isSubmitting}
         >
           {isSubmitting ? (
