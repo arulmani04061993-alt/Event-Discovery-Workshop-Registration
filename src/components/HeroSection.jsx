@@ -5,10 +5,10 @@ import {
   Calendar, 
   MapPin, 
   ArrowRight, 
-  ShieldCheck, 
-  Zap, 
   Compass,
-  Users
+  Users,
+  CheckCircle2,
+  Ticket
 } from 'lucide-react';
 import { useRegistrations } from '../hooks/useRegistrations';
 
@@ -19,41 +19,60 @@ export const HeroSection = ({ featuredEvent }) => {
     <section
       style={{
         position: 'relative',
-        paddingTop: '2.5rem',
+        paddingTop: '1.5rem',
         paddingBottom: '5rem',
         overflow: 'hidden'
       }}
     >
-      {/* Dynamic Background Mesh Effect */}
+      {/* Background Hero Photography with Subtle Gradient Overlay */}
       <div
         style={{
           position: 'absolute',
           top: 0,
-          left: '50%',
-          transform: 'translateX(-50%)',
-          width: '100vw',
-          maxWidth: '1440px',
-          height: '100%',
-          backgroundImage: 'radial-gradient(circle at 50% 20%, rgba(79, 70, 229, 0.22) 0%, rgba(6, 182, 212, 0.08) 35%, transparent 70%)',
-          pointerEvents: 'none',
-          zIndex: 0
+          left: 0,
+          right: 0,
+          height: '620px',
+          zIndex: 0,
+          overflow: 'hidden',
+          pointerEvents: 'none'
         }}
-      />
+      >
+        <img
+          src="/assets/images/backgrounds/hero-mesh-bg.webp?v=3"
+          alt="Conference ambiance"
+          style={{
+            width: '100%',
+            height: '100%',
+            objectFit: 'cover',
+            opacity: 0.22,
+            filter: 'blur(2px) brightness(0.7)',
+            transform: 'scale(1.05)'
+          }}
+        />
+        <div
+          style={{
+            position: 'absolute',
+            inset: 0,
+            background: 'linear-gradient(180deg, rgba(9, 13, 22, 0.4) 0%, rgba(9, 13, 22, 0.85) 60%, #090D16 100%)'
+          }}
+        />
+      </div>
 
       <div className="container" style={{ position: 'relative', zIndex: 1 }}>
         {/* Top Tag */}
-        <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '1.5rem' }}>
+        <div style={{ display: 'flex', justifyContent: 'center', marginBottom: '1.25rem' }}>
           <div
             className="animate-fade-in"
             style={{
               display: 'inline-flex',
               alignItems: 'center',
               gap: '8px',
-              padding: '6px 16px',
+              padding: '6px 18px',
               borderRadius: '30px',
-              background: 'rgba(255, 255, 255, 0.04)',
-              border: '1px solid rgba(255, 255, 255, 0.12)',
-              backdropFilter: 'blur(10px)',
+              background: 'rgba(15, 23, 42, 0.8)',
+              border: '1px solid rgba(99, 102, 241, 0.35)',
+              backdropFilter: 'blur(12px)',
+              boxShadow: '0 4px 14px rgba(0, 0, 0, 0.4)',
               color: '#E2E8F0',
               fontSize: '0.85rem',
               fontWeight: '600'
@@ -75,7 +94,7 @@ export const HeroSection = ({ featuredEvent }) => {
         </div>
 
         {/* Main Heading & Tagline */}
-        <div style={{ textAlign: 'center', maxWidth: '880px', margin: '0 auto 3rem auto' }}>
+        <div style={{ textAlign: 'center', maxWidth: '880px', margin: '0 auto 2.5rem auto' }}>
           <h1
             className="gradient-text-electric"
             style={{
@@ -92,10 +111,11 @@ export const HeroSection = ({ featuredEvent }) => {
           <p
             style={{
               fontSize: 'clamp(1rem, 2vw, 1.25rem)',
-              color: '#94A3B8',
+              color: '#CBD5E1',
               lineHeight: 1.6,
               maxWidth: '720px',
-              margin: '0 auto 2rem auto'
+              margin: '0 auto 2rem auto',
+              textShadow: '0 2px 8px rgba(0,0,0,0.6)'
             }}
           >
             Connect with industry-defining tech conferences, hands-on engineering masterclasses, and executive conclaves curated for builders shaping the future.
@@ -123,7 +143,7 @@ export const HeroSection = ({ featuredEvent }) => {
             <a
               href="#featured-section"
               className="btn-secondary"
-              style={{ padding: '0.85rem 1.8rem', fontSize: '1rem' }}
+              style={{ padding: '0.85rem 1.8rem', fontSize: '1rem', background: 'rgba(15, 23, 42, 0.7)' }}
             >
               View Featured Events
               <ArrowRight size={18} />
@@ -131,7 +151,7 @@ export const HeroSection = ({ featuredEvent }) => {
           </div>
         </div>
 
-        {/* Big Spotlight Hero Card */}
+        {/* Large Keynote Showcase Card with Prominent Photography */}
         {featuredEvent && (
           <div
             className="glass-panel animate-scale-in"
@@ -139,7 +159,8 @@ export const HeroSection = ({ featuredEvent }) => {
               borderRadius: '24px',
               overflow: 'hidden',
               position: 'relative',
-              border: '1px solid rgba(255, 255, 255, 0.12)',
+              background: '#0B111E',
+              border: '1px solid rgba(99, 102, 241, 0.25)',
               boxShadow: '0 30px 60px -15px rgba(0, 0, 0, 0.8), 0 0 40px rgba(79, 70, 229, 0.15)'
             }}
           >
@@ -147,11 +168,18 @@ export const HeroSection = ({ featuredEvent }) => {
               style={{
                 display: 'grid',
                 gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
-                alignItems: 'center'
+                alignItems: 'stretch'
               }}
             >
               {/* Left Details */}
-              <div style={{ padding: 'clamp(1.5rem, 4vw, 3rem)' }}>
+              <div
+                style={{
+                  padding: 'clamp(1.75rem, 4vw, 3rem)',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  justifyContent: 'center'
+                }}
+              >
                 <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '1rem' }}>
                   <span className="badge badge-technology">
                     {featuredEvent.category}
@@ -161,10 +189,10 @@ export const HeroSection = ({ featuredEvent }) => {
                       fontSize: '0.75rem',
                       fontWeight: '700',
                       color: '#06B6D4',
-                      background: 'rgba(6, 182, 212, 0.1)',
+                      background: 'rgba(6, 182, 212, 0.15)',
                       padding: '3px 10px',
                       borderRadius: '20px',
-                      border: '1px solid rgba(6, 182, 212, 0.3)'
+                      border: '1px solid rgba(6, 182, 212, 0.35)'
                     }}
                   >
                     ⭐ KEYNOTE CONCLAVE
@@ -198,7 +226,7 @@ export const HeroSection = ({ featuredEvent }) => {
                 <div
                   style={{
                     display: 'grid',
-                    gridTemplateColumns: 'repeat(auto-fit, minmax(160px, 1fr))',
+                    gridTemplateColumns: 'repeat(auto-fit, minmax(150px, 1fr))',
                     gap: '12px',
                     padding: '1rem',
                     borderRadius: '12px',
@@ -259,18 +287,18 @@ export const HeroSection = ({ featuredEvent }) => {
                 </div>
               </div>
 
-              {/* Right Media Graphic */}
+              {/* Right Media Graphic: Clear, High-Resolution Real Keynote Photography */}
               <div
                 style={{
                   position: 'relative',
                   width: '100%',
-                  height: '100%',
-                  minHeight: '340px'
+                  minHeight: '380px',
+                  overflow: 'hidden'
                 }}
               >
                 <img
-                  src={featuredEvent.image}
-                  alt={featuredEvent.name}
+                  src="/assets/images/hero/hero-tech-summit.webp?v=3"
+                  alt="Tech summit keynote stage"
                   style={{
                     width: '100%',
                     height: '100%',
@@ -278,17 +306,43 @@ export const HeroSection = ({ featuredEvent }) => {
                     display: 'block'
                   }}
                   onError={(e) => {
-                    e.currentTarget.src = '/assets/images/hero/hero-tech-summit.webp';
+                    e.currentTarget.src = featuredEvent.image;
                   }}
                 />
 
+                {/* Subtle side gradient for smooth text boundary */}
                 <div
                   style={{
                     position: 'absolute',
                     inset: 0,
-                    background: 'linear-gradient(90deg, rgba(11, 16, 29, 0.95) 0%, rgba(11, 16, 29, 0.2) 60%, transparent 100%)'
+                    background: 'linear-gradient(90deg, #0B111E 0%, rgba(11, 17, 30, 0.4) 30%, transparent 100%)',
+                    pointerEvents: 'none'
                   }}
                 />
+
+                {/* Floating pill over image */}
+                <div
+                  style={{
+                    position: 'absolute',
+                    bottom: '20px',
+                    right: '20px',
+                    background: 'rgba(9, 13, 22, 0.85)',
+                    backdropFilter: 'blur(8px)',
+                    border: '1px solid rgba(255, 255, 255, 0.15)',
+                    padding: '8px 16px',
+                    borderRadius: '24px',
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: '8px',
+                    color: '#FFFFFF',
+                    fontSize: '0.82rem',
+                    fontWeight: '600',
+                    boxShadow: '0 8px 16px rgba(0,0,0,0.5)'
+                  }}
+                >
+                  <Ticket size={16} color="#06B6D4" />
+                  <span>Verified STACKLY Keynote</span>
+                </div>
               </div>
             </div>
           </div>
