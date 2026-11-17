@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import { 
   Sparkles, 
@@ -7,40 +7,13 @@ import {
   ArrowRight, 
   Compass,
   Users,
-  Ticket,
-  ChevronLeft,
-  ChevronRight
+  CheckCircle2,
+  Ticket
 } from 'lucide-react';
 import { useRegistrations } from '../hooks/useRegistrations';
 
-export const HeroSection = ({ events = [] }) => {
+export const HeroSection = ({ featuredEvent }) => {
   const { openRegistrationModal } = useRegistrations();
-
-  // Slide items for the top hero showcase (take top 4 featured keynote events)
-  const heroSlides = events.length > 0 ? events.slice(0, 4) : [];
-  const [currentSlide, setCurrentSlide] = useState(0);
-  const [isPaused, setIsPaused] = useState(false);
-
-  // Auto-play timer: moves automatically every 4.5 seconds
-  useEffect(() => {
-    if (heroSlides.length <= 1 || isPaused) return;
-
-    const timer = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % heroSlides.length);
-    }, 4500);
-
-    return () => clearInterval(timer);
-  }, [heroSlides.length, isPaused]);
-
-  const activeEvent = heroSlides[currentSlide] || null;
-
-  const nextSlide = () => {
-    setCurrentSlide((prev) => (prev + 1) % heroSlides.length);
-  };
-
-  const prevSlide = () => {
-    setCurrentSlide((prev) => (prev - 1 + heroSlides.length) % heroSlides.length);
-  };
 
   return (
     <section
@@ -50,46 +23,37 @@ export const HeroSection = ({ events = [] }) => {
         paddingBottom: '5rem',
         overflow: 'hidden'
       }}
-      onMouseEnter={() => setIsPaused(true)}
-      onMouseLeave={() => setIsPaused(false)}
     >
-      {/* Background Hero Photography with Smooth Auto-Crossfade */}
+      {/* Background Hero Photography with Subtle Gradient Overlay */}
       <div
         style={{
           position: 'absolute',
           top: 0,
           left: 0,
           right: 0,
-          height: '650px',
+          height: '620px',
           zIndex: 0,
           overflow: 'hidden',
           pointerEvents: 'none'
         }}
       >
-        {heroSlides.map((slide, index) => (
-          <img
-            key={slide.id}
-            src={slide.image}
-            alt={slide.name}
-            style={{
-              position: 'absolute',
-              inset: 0,
-              width: '100%',
-              height: '100%',
-              objectFit: 'cover',
-              opacity: index === currentSlide ? 0.25 : 0,
-              filter: 'blur(3px) brightness(0.65)',
-              transform: index === currentSlide ? 'scale(1.05)' : 'scale(1)',
-              transition: 'all 1.2s cubic-bezier(0.16, 1, 0.3, 1)'
-            }}
-          />
-        ))}
-
+        <img
+          src="/assets/images/backgrounds/hero-mesh-bg.webp?v=3"
+          alt="Conference ambiance"
+          style={{
+            width: '100%',
+            height: '100%',
+            objectFit: 'cover',
+            opacity: 0.22,
+            filter: 'blur(2px) brightness(0.7)',
+            transform: 'scale(1.05)'
+          }}
+        />
         <div
           style={{
             position: 'absolute',
             inset: 0,
-            background: 'linear-gradient(180deg, rgba(9, 13, 22, 0.3) 0%, rgba(9, 13, 22, 0.85) 60%, #090D16 100%)'
+            background: 'linear-gradient(180deg, rgba(9, 13, 22, 0.4) 0%, rgba(9, 13, 22, 0.85) 60%, #090D16 100%)'
           }}
         />
       </div>
@@ -105,7 +69,7 @@ export const HeroSection = ({ events = [] }) => {
               gap: '8px',
               padding: '6px 18px',
               borderRadius: '30px',
-              background: 'rgba(15, 23, 42, 0.85)',
+              background: 'rgba(15, 23, 42, 0.8)',
               border: '1px solid rgba(99, 102, 241, 0.35)',
               backdropFilter: 'blur(12px)',
               boxShadow: '0 4px 14px rgba(0, 0, 0, 0.4)',
@@ -187,16 +151,16 @@ export const HeroSection = ({ events = [] }) => {
           </div>
         </div>
 
-        {/* Large Keynote Showcase Card with Automatic Slideshow */}
-        {activeEvent && (
+        {/* Large Keynote Showcase Card with Prominent Photography */}
+        {featuredEvent && (
           <div
-            className="glass-panel"
+            className="glass-panel animate-scale-in"
             style={{
               borderRadius: '24px',
               overflow: 'hidden',
               position: 'relative',
               background: '#0B111E',
-              border: '1px solid rgba(99, 102, 241, 0.28)',
+              border: '1px solid rgba(99, 102, 241, 0.25)',
               boxShadow: '0 30px 60px -15px rgba(0, 0, 0, 0.8), 0 0 40px rgba(79, 70, 229, 0.15)'
             }}
           >
@@ -213,13 +177,12 @@ export const HeroSection = ({ events = [] }) => {
                   padding: 'clamp(1.75rem, 4vw, 3rem)',
                   display: 'flex',
                   flexDirection: 'column',
-                  justifyContent: 'center',
-                  transition: 'opacity 0.4s ease'
+                  justifyContent: 'center'
                 }}
               >
                 <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '1rem' }}>
-                  <span className={`badge badge-${activeEvent.category.toLowerCase()}`}>
-                    {activeEvent.category}
+                  <span className="badge badge-technology">
+                    {featuredEvent.category}
                   </span>
                   <span
                     style={{
@@ -232,7 +195,7 @@ export const HeroSection = ({ events = [] }) => {
                       border: '1px solid rgba(6, 182, 212, 0.35)'
                     }}
                   >
-                    ⭐ KEYNOTE CONCLAVE {currentSlide + 1} OF {heroSlides.length}
+                    ⭐ KEYNOTE CONCLAVE
                   </span>
                 </div>
 
@@ -245,7 +208,7 @@ export const HeroSection = ({ events = [] }) => {
                     marginBottom: '1rem'
                   }}
                 >
-                  {activeEvent.name}
+                  {featuredEvent.name}
                 </h2>
 
                 <p
@@ -256,7 +219,7 @@ export const HeroSection = ({ events = [] }) => {
                     marginBottom: '1.5rem'
                   }}
                 >
-                  {activeEvent.description}
+                  {featuredEvent.description}
                 </p>
 
                 {/* Event Metadata Highlights */}
@@ -277,7 +240,7 @@ export const HeroSection = ({ events = [] }) => {
                     <div>
                       <div style={{ fontSize: '0.72rem', color: '#64748B', fontWeight: '600' }}>DATE & TIME</div>
                       <div style={{ fontSize: '0.85rem', color: '#E2E8F0', fontWeight: '600' }}>
-                        {activeEvent.formattedDate}
+                        {featuredEvent.formattedDate}
                       </div>
                     </div>
                   </div>
@@ -287,7 +250,7 @@ export const HeroSection = ({ events = [] }) => {
                     <div>
                       <div style={{ fontSize: '0.72rem', color: '#64748B', fontWeight: '600' }}>VENUE</div>
                       <div style={{ fontSize: '0.85rem', color: '#E2E8F0', fontWeight: '600' }}>
-                        {activeEvent.location}
+                        {featuredEvent.location}
                       </div>
                     </div>
                   </div>
@@ -297,7 +260,7 @@ export const HeroSection = ({ events = [] }) => {
                     <div>
                       <div style={{ fontSize: '0.72rem', color: '#64748B', fontWeight: '600' }}>SEATS LEFT</div>
                       <div style={{ fontSize: '0.85rem', color: '#10B981', fontWeight: '700' }}>
-                        {activeEvent.availableSeats} of {activeEvent.totalSeats} seats
+                        {featuredEvent.availableSeats} of {featuredEvent.totalSeats} seats
                       </div>
                     </div>
                   </div>
@@ -306,7 +269,7 @@ export const HeroSection = ({ events = [] }) => {
                 {/* Card Actions */}
                 <div style={{ display: 'flex', flexWrap: 'wrap', gap: '12px' }}>
                   <button
-                    onClick={() => openRegistrationModal(activeEvent)}
+                    onClick={() => openRegistrationModal(featuredEvent)}
                     className="btn-primary"
                     style={{ padding: '0.75rem 1.6rem' }}
                   >
@@ -315,7 +278,7 @@ export const HeroSection = ({ events = [] }) => {
                   </button>
 
                   <Link
-                    to={`/events/${activeEvent.id}`}
+                    to={`/events/${featuredEvent.id}`}
                     className="btn-secondary"
                     style={{ padding: '0.75rem 1.4rem' }}
                   >
@@ -324,7 +287,7 @@ export const HeroSection = ({ events = [] }) => {
                 </div>
               </div>
 
-              {/* Right Media Graphic: Auto-moving Slide Image Carousel */}
+              {/* Right Media Graphic: Clear, High-Resolution Real Keynote Photography */}
               <div
                 style={{
                   position: 'relative',
@@ -333,125 +296,29 @@ export const HeroSection = ({ events = [] }) => {
                   overflow: 'hidden'
                 }}
               >
-                {heroSlides.map((slide, idx) => (
-                  <img
-                    key={slide.id}
-                    src={slide.image}
-                    alt={slide.name}
-                    style={{
-                      position: 'absolute',
-                      inset: 0,
-                      width: '100%',
-                      height: '100%',
-                      objectFit: 'cover',
-                      opacity: idx === currentSlide ? 1 : 0,
-                      transform: idx === currentSlide ? 'scale(1)' : 'scale(1.08)',
-                      transition: 'opacity 0.8s ease-in-out, transform 1.2s ease-out'
-                    }}
-                  />
-                ))}
+                <img
+                  src="/assets/images/hero/hero-tech-summit.webp?v=3"
+                  alt="Tech summit keynote stage"
+                  style={{
+                    width: '100%',
+                    height: '100%',
+                    objectFit: 'cover',
+                    display: 'block'
+                  }}
+                  onError={(e) => {
+                    e.currentTarget.src = featuredEvent.image;
+                  }}
+                />
 
-                {/* Gradient Boundary Layer */}
+                {/* Subtle side gradient for smooth text boundary */}
                 <div
                   style={{
                     position: 'absolute',
                     inset: 0,
-                    background: 'linear-gradient(90deg, #0B111E 0%, rgba(11, 17, 30, 0.3) 25%, transparent 100%)',
+                    background: 'linear-gradient(90deg, #0B111E 0%, rgba(11, 17, 30, 0.4) 30%, transparent 100%)',
                     pointerEvents: 'none'
                   }}
                 />
-
-                {/* Previous & Next Manual Controls */}
-                <div
-                  style={{
-                    position: 'absolute',
-                    top: '50%',
-                    left: '14px',
-                    right: '14px',
-                    transform: 'translateY(-50%)',
-                    display: 'flex',
-                    justifyContent: 'space-between',
-                    pointerEvents: 'none',
-                    zIndex: 4
-                  }}
-                >
-                  <button
-                    onClick={prevSlide}
-                    aria-label="Previous event slide"
-                    style={{
-                      pointerEvents: 'auto',
-                      width: '40px',
-                      height: '40px',
-                      borderRadius: '50%',
-                      background: 'rgba(9, 13, 22, 0.75)',
-                      backdropFilter: 'blur(8px)',
-                      border: '1px solid rgba(255, 255, 255, 0.2)',
-                      color: '#FFFFFF',
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                      cursor: 'pointer',
-                      boxShadow: '0 4px 12px rgba(0,0,0,0.5)',
-                      transition: 'all 0.2s'
-                    }}
-                  >
-                    <ChevronLeft size={20} />
-                  </button>
-
-                  <button
-                    onClick={nextSlide}
-                    aria-label="Next event slide"
-                    style={{
-                      pointerEvents: 'auto',
-                      width: '40px',
-                      height: '40px',
-                      borderRadius: '50%',
-                      background: 'rgba(9, 13, 22, 0.75)',
-                      backdropFilter: 'blur(8px)',
-                      border: '1px solid rgba(255, 255, 255, 0.2)',
-                      color: '#FFFFFF',
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                      cursor: 'pointer',
-                      boxShadow: '0 4px 12px rgba(0,0,0,0.5)',
-                      transition: 'all 0.2s'
-                    }}
-                  >
-                    <ChevronRight size={20} />
-                  </button>
-                </div>
-
-                {/* Carousel Pagination Indicator Dots */}
-                <div
-                  style={{
-                    position: 'absolute',
-                    bottom: '20px',
-                    left: '20px',
-                    display: 'flex',
-                    alignItems: 'center',
-                    gap: '8px',
-                    zIndex: 4
-                  }}
-                >
-                  {heroSlides.map((_, i) => (
-                    <button
-                      key={i}
-                      onClick={() => setCurrentSlide(i)}
-                      aria-label={`Go to slide ${i + 1}`}
-                      style={{
-                        width: i === currentSlide ? '28px' : '8px',
-                        height: '8px',
-                        borderRadius: '4px',
-                        background: i === currentSlide ? '#06B6D4' : 'rgba(255, 255, 255, 0.4)',
-                        border: 'none',
-                        cursor: 'pointer',
-                        transition: 'all 0.3s ease',
-                        boxShadow: '0 2px 6px rgba(0,0,0,0.4)'
-                      }}
-                    />
-                  ))}
-                </div>
 
                 {/* Floating pill over image */}
                 <div
@@ -470,8 +337,7 @@ export const HeroSection = ({ events = [] }) => {
                     color: '#FFFFFF',
                     fontSize: '0.82rem',
                     fontWeight: '600',
-                    boxShadow: '0 8px 16px rgba(0,0,0,0.5)',
-                    zIndex: 4
+                    boxShadow: '0 8px 16px rgba(0,0,0,0.5)'
                   }}
                 >
                   <Ticket size={16} color="#06B6D4" />
