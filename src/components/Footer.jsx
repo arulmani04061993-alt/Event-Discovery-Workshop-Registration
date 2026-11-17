@@ -173,16 +173,6 @@ export const Footer = () => {
                 </Link>
               </li>
               <li>
-                <Link to="/events" style={{ color: '#94A3B8', fontSize: '0.9rem', transition: 'color 0.2s' }}>
-                  Explore All Events
-                </Link>
-              </li>
-              <li>
-                <Link to="/events?category=Technology" style={{ color: '#94A3B8', fontSize: '0.9rem' }}>
-                  Technology Summits
-                </Link>
-              </li>
-              <li>
                 <Link to="/events?category=Business" style={{ color: '#94A3B8', fontSize: '0.9rem' }}>
                   Business & Leadership
                 </Link>
@@ -195,7 +185,7 @@ export const Footer = () => {
             </ul>
           </div>
 
-          {/* Focus Categories */}
+          {/* Focus Categories / Mastery Tracks (All link to 404 page) */}
           <div>
             <h4
               style={{
@@ -211,22 +201,22 @@ export const Footer = () => {
             </h4>
             <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '10px' }}>
               <li>
-                <Link to="/events?category=Technology" style={{ color: '#94A3B8', fontSize: '0.9rem' }}>
+                <Link to="/404" style={{ color: '#94A3B8', fontSize: '0.9rem', transition: 'color 0.2s' }}>
                   Autonomous AI & LLM Systems
                 </Link>
               </li>
               <li>
-                <Link to="/events?category=Design" style={{ color: '#94A3B8', fontSize: '0.9rem' }}>
+                <Link to="/404" style={{ color: '#94A3B8', fontSize: '0.9rem', transition: 'color 0.2s' }}>
                   Spatial UI & Design Systems
                 </Link>
               </li>
               <li>
-                <Link to="/events?category=Business" style={{ color: '#94A3B8', fontSize: '0.9rem' }}>
+                <Link to="/404" style={{ color: '#94A3B8', fontSize: '0.9rem', transition: 'color 0.2s' }}>
                   Venture Scale & PLG Architecture
                 </Link>
               </li>
               <li>
-                <Link to="/events?category=Education" style={{ color: '#94A3B8', fontSize: '0.9rem' }}>
+                <Link to="/404" style={{ color: '#94A3B8', fontSize: '0.9rem', transition: 'color 0.2s' }}>
                   Rust & Data Engineering Labs
                 </Link>
               </li>
