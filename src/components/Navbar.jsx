@@ -377,17 +377,6 @@ export const Navbar = () => {
               <Sparkles size={20} />
               Find Workshops
             </NavLink>
-
-            <div
-              style={{
-                textAlign: 'center',
-                fontSize: '0.8rem',
-                color: '#64748B',
-                paddingTop: '8px'
-              }}
-            >
-              STACKLY Enterprise Discovery & Registration
-            </div>
           </div>
         </div>
       )}
