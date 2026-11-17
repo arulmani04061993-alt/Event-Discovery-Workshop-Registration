@@ -203,3 +203,4 @@ Deploy directly from GitHub. The standard `npm run build` command with output di
 
 ## 📄 License
 MIT © STACKLY Technologies.
+# Event-Discovery-Workshop-Registration
