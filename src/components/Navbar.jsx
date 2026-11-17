@@ -77,6 +77,7 @@ export const Navbar = () => {
         {/* Brand Logo with User Custom WebP Logo */}
         <Link
           to="/"
+          onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
           style={{
             display: 'flex',
             alignItems: 'center',
@@ -107,7 +108,12 @@ export const Navbar = () => {
           }}
           className="desktop-nav"
         >
-          <NavLink to="/" style={navLinkStyle} end>
+          <NavLink
+            to="/"
+            style={navLinkStyle}
+            end
+            onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+          >
             Home
           </NavLink>
           <NavLink to="/events" style={navLinkStyle}>
@@ -187,7 +193,12 @@ export const Navbar = () => {
             gap: '10px'
           }}
         >
-          <NavLink to="/" style={navLinkStyle} end>
+          <NavLink
+            to="/"
+            style={navLinkStyle}
+            end
+            onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+          >
             Home
           </NavLink>
           <NavLink to="/events" style={navLinkStyle}>

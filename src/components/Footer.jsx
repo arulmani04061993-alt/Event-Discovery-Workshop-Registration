@@ -176,22 +176,47 @@ export const Footer = () => {
             </h4>
             <ul style={{ listStyle: 'none', display: 'flex', flexDirection: 'column', gap: '10px' }}>
               <li>
-                <Link to="/" style={{ color: '#94A3B8', fontSize: '0.9rem', transition: 'color 0.2s' }}>
+                <Link
+                  to="/"
+                  onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+                  style={{ color: '#94A3B8', fontSize: '0.9rem', transition: 'color 0.2s' }}
+                >
                   Home Overview
                 </Link>
               </li>
               <li>
-                <Link to="/workshops" style={{ color: '#94A3B8', fontSize: '0.9rem', transition: 'color 0.2s' }}>
+                <Link
+                  to="/events"
+                  onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+                  style={{ color: '#94A3B8', fontSize: '0.9rem', transition: 'color 0.2s' }}
+                >
+                  Explore Events
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/workshops"
+                  onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+                  style={{ color: '#94A3B8', fontSize: '0.9rem', transition: 'color 0.2s' }}
+                >
                   Find Workshops
                 </Link>
               </li>
               <li>
-                <Link to="/events?category=Business" style={{ color: '#94A3B8', fontSize: '0.9rem' }}>
+                <Link
+                  to="/events?category=Business"
+                  onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+                  style={{ color: '#94A3B8', fontSize: '0.9rem' }}
+                >
                   Business & Leadership
                 </Link>
               </li>
               <li>
-                <Link to="/registrations" style={{ color: '#94A3B8', fontSize: '0.9rem' }}>
+                <Link
+                  to="/registrations"
+                  onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+                  style={{ color: '#94A3B8', fontSize: '0.9rem' }}
+                >
                   My Confirmed Passes
                 </Link>
               </li>
