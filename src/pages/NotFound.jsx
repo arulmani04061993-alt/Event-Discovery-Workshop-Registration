@@ -30,14 +30,14 @@ export const NotFound = () => {
       {/* Brand Logo with User WebP Logo */}
       <div style={{ marginBottom: '2rem' }}>
         <img
-          src="/assets/images/stackly-logo.webp"
+          src="/assets/images/stackly-logo.webp?v=4"
           alt="STACKLY"
           style={{
             height: '48px',
             width: 'auto',
             objectFit: 'contain',
             display: 'block',
-            filter: 'drop-shadow(0 4px 14px rgba(255, 45, 85, 0.3))'
+            filter: 'drop-shadow(0 4px 16px rgba(6, 182, 212, 0.4))'
           }}
         />
       </div>

@@ -85,7 +85,7 @@ export const Navbar = () => {
           }}
         >
           <img
-            src="/assets/images/stackly-logo.webp"
+            src="/assets/images/stackly-logo.webp?v=4"
             alt="STACKLY"
             style={{
               height: '38px',
@@ -93,7 +93,7 @@ export const Navbar = () => {
               maxHeight: '40px',
               objectFit: 'contain',
               display: 'block',
-              filter: 'drop-shadow(0 2px 8px rgba(255, 45, 85, 0.25))'
+              filter: 'drop-shadow(0 2px 10px rgba(6, 182, 212, 0.35))'
             }}
           />
         </Link>

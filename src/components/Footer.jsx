@@ -56,14 +56,14 @@ export const Footer = () => {
               }}
             >
               <img
-                src="/assets/images/stackly-logo.webp"
+                src="/assets/images/stackly-logo.webp?v=4"
                 alt="STACKLY"
                 style={{
                   height: '42px',
                   width: 'auto',
                   objectFit: 'contain',
                   display: 'block',
-                  filter: 'drop-shadow(0 2px 10px rgba(255, 45, 85, 0.2))'
+                  filter: 'drop-shadow(0 2px 10px rgba(6, 182, 212, 0.3))'
                 }}
               />
             </Link>
