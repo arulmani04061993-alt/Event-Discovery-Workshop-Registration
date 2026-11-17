@@ -36,7 +36,7 @@ const AppContent = () => {
     <div style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
       {!is404Page && <Navbar />}
 
-      <main style={{ flex: 1 }}>
+      <main style={{ flex: 1, paddingTop: !is404Page ? '76px' : 0 }}>
         <Suspense fallback={<LoadingAnimation text="Loading Stackly experience..." />}>
           <Routes>
             <Route path="/" element={<Home />} />

@@ -66,14 +66,19 @@ export const Navbar = () => {
   return (
     <header
       style={{
-        position: 'sticky',
+        position: 'fixed',
         top: 0,
+        left: 0,
+        right: 0,
         zIndex: 1000,
         width: '100%',
-        backdropFilter: isScrolled ? 'blur(16px)' : 'none',
-        WebkitBackdropFilter: isScrolled ? 'blur(16px)' : 'none',
-        background: isScrolled ? 'rgba(9, 13, 22, 0.88)' : 'transparent',
-        borderBottom: isScrolled ? '1px solid rgba(255, 255, 255, 0.08)' : '1px solid transparent',
+        backdropFilter: 'blur(20px)',
+        WebkitBackdropFilter: 'blur(20px)',
+        background: isScrolled
+          ? 'rgba(9, 13, 22, 0.95)'
+          : 'rgba(9, 13, 22, 0.82)',
+        borderBottom: '1px solid rgba(255, 255, 255, 0.08)',
+        boxShadow: isScrolled ? '0 10px 30px -10px rgba(0, 0, 0, 0.5)' : 'none',
         transition: 'all 0.3s ease'
       }}
     >
