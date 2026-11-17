@@ -14,6 +14,7 @@ import Home from './pages/Home';
 import ExploreEvents from './pages/ExploreEvents';
 import EventDetails from './pages/EventDetails';
 import MyRegistrations from './pages/MyRegistrations';
+import FindWorkshops from './pages/FindWorkshops';
 import NotFound from './pages/NotFound';
 
 export const App = () => {
@@ -30,6 +31,7 @@ export const App = () => {
                 <Route path="/" element={<Home />} />
                 <Route path="/events" element={<ExploreEvents />} />
                 <Route path="/events/:id" element={<EventDetails />} />
+                <Route path="/workshops" element={<FindWorkshops />} />
                 <Route path="/registrations" element={<MyRegistrations />} />
                 <Route path="/404" element={<NotFound />} />
                 <Route path="*" element={<NotFound />} />

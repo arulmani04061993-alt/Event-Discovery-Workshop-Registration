@@ -171,14 +171,14 @@ export const Navbar = () => {
           }}
           className="desktop-cta"
         >
-          <Link
-            to="/events"
+          <NavLink
+            to="/workshops"
             className="btn-primary"
             style={{ padding: '0.55rem 1.25rem', fontSize: '0.88rem' }}
           >
             <Sparkles size={16} />
             Find Workshops
-          </Link>
+          </NavLink>
         </div>
 
         {/* Mobile Hamburger Button */}
@@ -241,14 +241,14 @@ export const Navbar = () => {
             )}
           </NavLink>
 
-          <Link
-            to="/events"
+          <NavLink
+            to="/workshops"
             className="btn-primary"
             style={{ width: '100%', marginTop: '8px', justifyContent: 'center' }}
           >
             <Sparkles size={16} />
             Find Workshops
-          </Link>
+          </NavLink>
         </div>
       )}
 
