@@ -30,8 +30,8 @@ export const Home = () => {
 
   return (
     <div className="animate-fade-in">
-      {/* 1. Hero Section with Auto-Moving Images & Event Slides */}
-      <HeroSection events={events} />
+      {/* 1. Hero Section */}
+      <HeroSection featuredEvent={primaryHeroEvent} />
 
       {/* 2. Platform Statistics Banner */}
       <section style={{ padding: '2rem 0', borderY: '1px solid rgba(255, 255, 255, 0.06)' }}>
