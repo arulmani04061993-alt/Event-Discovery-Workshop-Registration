@@ -1,8 +1,19 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import { Compass, Home, Layers } from 'lucide-react';
+import { Link, useNavigate } from 'react-router-dom';
+import { ArrowLeft, Home, Layers } from 'lucide-react';
 
 export const NotFound = () => {
+  const navigate = useNavigate();
+
+  const handleGoBack = () => {
+    // If there is history, navigate back; otherwise fallback to home
+    if (window.history.length > 1) {
+      navigate(-1);
+    } else {
+      navigate('/');
+    }
+  };
+
   return (
     <div
       style={{
@@ -66,18 +77,42 @@ export const NotFound = () => {
         </h1>
 
         <p style={{ fontSize: '0.95rem', color: '#94A3B8', lineHeight: 1.6, marginBottom: '2rem' }}>
-          The link you followed may be broken, or the summit page has expired. You can return to our homepage or explore active workshops below.
+          The link you followed may be broken, or the summit page has expired. You can return to your previous page or navigate to the homepage below.
         </p>
 
-        <div style={{ display: 'flex', flexWrap: 'wrap', gap: '12px', justifyContent: 'center' }}>
-          <Link to="/" className="btn-secondary" style={{ padding: '0.75rem 1.4rem' }}>
-            <Home size={16} />
-            Back to Home
-          </Link>
+        {/* Two Action Buttons: Go Back and Go to Home */}
+        <div style={{ display: 'flex', flexWrap: 'wrap', gap: '14px', justifyContent: 'center' }}>
+          {/* 1. Go Back Button: Takes the user back to where they came from */}
+          <button
+            onClick={handleGoBack}
+            className="btn-secondary"
+            style={{
+              padding: '0.8rem 1.6rem',
+              fontSize: '0.95rem',
+              display: 'inline-flex',
+              alignItems: 'center',
+              gap: '8px',
+              cursor: 'pointer'
+            }}
+          >
+            <ArrowLeft size={18} />
+            Go Back
+          </button>
 
-          <Link to="/events" className="btn-primary" style={{ padding: '0.75rem 1.6rem' }}>
-            <Compass size={16} />
-            Explore Events
+          {/* 2. Go to Home Button: Takes user directly to Home page */}
+          <Link
+            to="/"
+            className="btn-primary"
+            style={{
+              padding: '0.8rem 1.8rem',
+              fontSize: '0.95rem',
+              display: 'inline-flex',
+              alignItems: 'center',
+              gap: '8px'
+            }}
+          >
+            <Home size={18} />
+            Go to Home
           </Link>
         </div>
       </div>
