@@ -6,11 +6,15 @@ import { generateRegistrationId } from '../utils/validation';
 const EventContext = createContext(null);
 
 export const EventProvider = ({ children }) => {
-  // 1. Events state
+  // 1. Events state: ensure images are always updated to latest version
   const [events, setEvents] = useState(() => {
     const saved = getStoredItem(STORAGE_KEYS.EVENTS, null);
     if (saved && Array.isArray(saved) && saved.length > 0) {
-      return saved;
+      // Merge saved state (like seats remaining) with fresh image paths to avoid stale browser cache
+      return saved.map((sEvt) => {
+        const fresh = INITIAL_EVENTS.find((ie) => ie.id === sEvt.id);
+        return fresh ? { ...sEvt, image: fresh.image } : sEvt;
+      });
     }
     setStoredItem(STORAGE_KEYS.EVENTS, INITIAL_EVENTS);
     return INITIAL_EVENTS;

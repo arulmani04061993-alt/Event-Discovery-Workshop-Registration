@@ -9,7 +9,7 @@ export const INITIAL_EVENTS = [
     endTime: "05:30 PM",
     location: "Bengaluru",
     venue: "Nimhans Convention Centre, Hosur Rd, Bengaluru",
-    image: "/assets/images/events/event-1-nextgen-ai.webp",
+    image: "/assets/images/events/event-1-nextgen-ai.webp?v=2",
     availableSeats: 34,
     totalSeats: 150,
     featured: true,
@@ -17,7 +17,7 @@ export const INITIAL_EVENTS = [
     organizer: {
       name: "Stackly Labs",
       title: "Enterprise AI & Research Guild",
-      avatar: "/assets/images/organizers/org-stackly-labs.webp",
+      avatar: "/assets/images/organizers/org-stackly-labs.webp?v=2",
       verified: true
     },
     description: "The NextGen AI Summit gathers top ML researchers, autonomous agents architects, and generative systems engineers. Explore hands-on architectures for multimodal agents, retrieval pipelines, inference latency reduction, and safety guardrails.",
@@ -39,7 +39,7 @@ export const INITIAL_EVENTS = [
     endTime: "04:30 PM",
     location: "Hyderabad",
     venue: "HICC Novotel Arena, HITEC City, Hyderabad",
-    image: "/assets/images/events/event-2-cloud-scale.webp",
+    image: "/assets/images/events/event-2-cloud-scale.webp?v=2",
     availableSeats: 48,
     totalSeats: 200,
     featured: true,
@@ -47,7 +47,7 @@ export const INITIAL_EVENTS = [
     organizer: {
       name: "DevCollective",
       title: "Cloud Infrastructure Community",
-      avatar: "/assets/images/organizers/org-dev-collective.webp",
+      avatar: "/assets/images/organizers/org-dev-collective.webp?v=2",
       verified: true
     },
     description: "Deep dive into hyperscale distributed architectures, multi-region Kubernetes clusters, Kafka streaming meshes, and zero-downtime database replication under heavy consumer traffic.",
@@ -68,7 +68,7 @@ export const INITIAL_EVENTS = [
     endTime: "06:00 PM",
     location: "Mumbai",
     venue: "Jio World Convention Centre, BKC, Mumbai",
-    image: "/assets/images/events/event-3-venture-scale.webp",
+    image: "/assets/images/events/event-3-venture-scale.webp?v=2",
     availableSeats: 22,
     totalSeats: 120,
     featured: true,
@@ -76,7 +76,7 @@ export const INITIAL_EVENTS = [
     organizer: {
       name: "Venture India Alliance",
       title: "Founders & Angels Syndicate",
-      avatar: "/assets/images/organizers/org-venture-india.webp",
+      avatar: "/assets/images/organizers/org-venture-india.webp?v=2",
       verified: true
     },
     description: "A closed-door conclave connecting Series A/B founders, high-conviction angel syndicates, and premier venture partners to dissect market unit economics, international expansion, and institutional governance.",
@@ -97,7 +97,7 @@ export const INITIAL_EVENTS = [
     endTime: "05:00 PM",
     location: "Bengaluru",
     venue: "WeWork Galaxy Rooftop, Residency Rd, Bengaluru",
-    image: "/assets/images/events/event-4-design-systems.webp",
+    image: "/assets/images/events/event-4-design-systems.webp?v=2",
     availableSeats: 16,
     totalSeats: 80,
     featured: true,
@@ -105,7 +105,7 @@ export const INITIAL_EVENTS = [
     organizer: {
       name: "Design Craft Guild",
       title: "Global UX & Interaction Studio",
-      avatar: "/assets/images/organizers/org-design-craft.webp",
+      avatar: "/assets/images/organizers/org-design-craft.webp?v=2",
       verified: true
     },
     description: "Master modern design tokens, seamless Figma-to-code pipelines, multi-brand component libraries, and enterprise accessibility standards without slowing down team velocity.",
@@ -126,7 +126,7 @@ export const INITIAL_EVENTS = [
     endTime: "04:00 PM",
     location: "Delhi NCR",
     venue: "India Expo Centre, Greater Noida, Delhi NCR",
-    image: "/assets/images/events/event-5-cybersecurity.webp",
+    image: "/assets/images/events/event-5-cybersecurity.webp?v=2",
     availableSeats: 65,
     totalSeats: 180,
     featured: false,
@@ -134,7 +134,7 @@ export const INITIAL_EVENTS = [
     organizer: {
       name: "DevCollective",
       title: "Cloud Infrastructure Community",
-      avatar: "/assets/images/organizers/org-dev-collective.webp",
+      avatar: "/assets/images/organizers/org-dev-collective.webp?v=2",
       verified: true
     },
     description: "An intensive practitioner summit on modern offensive and defensive cyber tactics, cloud IAM lockdown, supply chain vulnerability scans, and AI-assisted threat hunting.",
@@ -155,7 +155,7 @@ export const INITIAL_EVENTS = [
     endTime: "05:00 PM",
     location: "Pune",
     venue: "Sheraton Grand Convention Suite, Bund Garden Rd, Pune",
-    image: "/assets/images/events/event-6-product-growth.webp",
+    image: "/assets/images/events/event-6-product-growth.webp?v=2",
     availableSeats: 40,
     totalSeats: 110,
     featured: false,
@@ -163,7 +163,7 @@ export const INITIAL_EVENTS = [
     organizer: {
       name: "Venture India Alliance",
       title: "Founders & Angels Syndicate",
-      avatar: "/assets/images/organizers/org-venture-india.webp",
+      avatar: "/assets/images/organizers/org-venture-india.webp?v=2",
       verified: true
     },
     description: "Transform product roadmap guesswork into compound business growth. Learn Product-Led Growth (PLG) mechanics, activation funnel optimization, and telemetry analysis.",
@@ -184,7 +184,7 @@ export const INITIAL_EVENTS = [
     endTime: "06:00 PM",
     location: "Mumbai",
     venue: "National Centre for the Performing Arts (NCPA), Nariman Point, Mumbai",
-    image: "/assets/images/events/event-7-spatial-ui.webp",
+    image: "/assets/images/events/event-7-spatial-ui.webp?v=2",
     availableSeats: 19,
     totalSeats: 75,
     featured: false,
@@ -192,7 +192,7 @@ export const INITIAL_EVENTS = [
     organizer: {
       name: "Design Craft Guild",
       title: "Global UX & Interaction Studio",
-      avatar: "/assets/images/organizers/org-design-craft.webp",
+      avatar: "/assets/images/organizers/org-design-craft.webp?v=2",
       verified: true
     },
     description: "Craft next-generation spatial computing interfaces, WebGL shader interactions, and 3D web canvases using Three.js, React Three Fiber, and visionOS ergonomic principles.",
@@ -213,7 +213,7 @@ export const INITIAL_EVENTS = [
     endTime: "05:00 PM",
     location: "Chennai",
     venue: "IIT Madras Research Park Auditorium, Taramani, Chennai",
-    image: "/assets/images/events/event-8-fullstack-devops.webp",
+    image: "/assets/images/events/event-8-fullstack-devops.webp?v=2",
     availableSeats: 52,
     totalSeats: 140,
     featured: false,
@@ -221,7 +221,7 @@ export const INITIAL_EVENTS = [
     organizer: {
       name: "Stackly Labs",
       title: "Enterprise AI & Research Guild",
-      avatar: "/assets/images/organizers/org-stackly-labs.webp",
+      avatar: "/assets/images/organizers/org-stackly-labs.webp?v=2",
       verified: true
     },
     description: "A hands-on coding masterclass exploring systems programming for modern web developers: memory safety, zero-cost abstractions, WebAssembly in browsers, and async Tokio backend servers.",
@@ -242,7 +242,7 @@ export const INITIAL_EVENTS = [
     endTime: "05:30 PM",
     location: "Bengaluru",
     venue: "The Leela Palace Grand Ballroom, Old Airport Rd, Bengaluru",
-    image: "/assets/images/events/event-9-fintech-disruption.webp",
+    image: "/assets/images/events/event-9-fintech-disruption.webp?v=2",
     availableSeats: 30,
     totalSeats: 160,
     featured: false,
@@ -250,7 +250,7 @@ export const INITIAL_EVENTS = [
     organizer: {
       name: "Venture India Alliance",
       title: "Founders & Angels Syndicate",
-      avatar: "/assets/images/organizers/org-venture-india.webp",
+      avatar: "/assets/images/organizers/org-venture-india.webp?v=2",
       verified: true
     },
     description: "Explore the bleeding edge of instant settlement rails, Account Aggregator architectures, algorithmic fraud prevention, and cross-border digital rupee implementations.",
@@ -271,7 +271,7 @@ export const INITIAL_EVENTS = [
     endTime: "05:30 PM",
     location: "Goa",
     venue: "Kala Academy Arts Centre, Campal, Panaji, Goa",
-    image: "/assets/images/events/event-10-creative-direction.webp",
+    image: "/assets/images/events/event-10-creative-direction.webp?v=2",
     availableSeats: 25,
     totalSeats: 90,
     featured: false,
@@ -279,7 +279,7 @@ export const INITIAL_EVENTS = [
     organizer: {
       name: "Design Craft Guild",
       title: "Global UX & Interaction Studio",
-      avatar: "/assets/images/organizers/org-design-craft.webp",
+      avatar: "/assets/images/organizers/org-design-craft.webp?v=2",
       verified: true
     },
     description: "An inspiring coastal retreat on kinetic typography, generative art installations, creative direction, and cinematic motion design for global digital brands.",
@@ -300,7 +300,7 @@ export const INITIAL_EVENTS = [
     endTime: "04:30 PM",
     location: "Hyderabad",
     venue: "T-Hub Phase 2 Concourse, Knowledge City, Hyderabad",
-    image: "/assets/images/events/event-11-data-engineering.webp",
+    image: "/assets/images/events/event-11-data-engineering.webp?v=2",
     availableSeats: 70,
     totalSeats: 150,
     featured: false,
@@ -308,7 +308,7 @@ export const INITIAL_EVENTS = [
     organizer: {
       name: "DevCollective",
       title: "Cloud Infrastructure Community",
-      avatar: "/assets/images/organizers/org-dev-collective.webp",
+      avatar: "/assets/images/organizers/org-dev-collective.webp?v=2",
       verified: true
     },
     description: "Learn how to build bulletproof petabyte-scale data pipelines using Apache Iceberg, DuckDB, ClickHouse, and modern ELT transformations with automated quality contracts.",
@@ -329,7 +329,7 @@ export const INITIAL_EVENTS = [
     endTime: "05:00 PM",
     location: "Bengaluru",
     venue: "Indiranagar Club Innovation Hall, 100 Feet Rd, Bengaluru",
-    image: "/assets/images/events/event-12-micro-saas.webp",
+    image: "/assets/images/events/event-12-micro-saas.webp?v=2",
     availableSeats: 12,
     totalSeats: 60,
     featured: false,
@@ -337,7 +337,7 @@ export const INITIAL_EVENTS = [
     organizer: {
       name: "Stackly Labs",
       title: "Enterprise AI & Research Guild",
-      avatar: "/assets/images/organizers/org-stackly-labs.webp",
+      avatar: "/assets/images/organizers/org-stackly-labs.webp?v=2",
       verified: true
     },
     description: "A fast-paced tactical intensive for solopreneurs and developer-founders: validation frameworks, building MVPs in 14 days, automated customer acquisition, and profitable scaling.",
@@ -357,7 +357,7 @@ export const CATEGORIES_DATA = [
     description: "AI, Cloud infrastructure, Distributed systems & Web3",
     iconName: "Cpu",
     badge: "120+ Workshops",
-    image: "/assets/images/categories/cat-technology.webp"
+    image: "/assets/images/categories/cat-technology.webp?v=2"
   },
   {
     id: "Business",
@@ -365,7 +365,7 @@ export const CATEGORIES_DATA = [
     description: "Venture scale, Product strategy & Executive leadership",
     iconName: "Briefcase",
     badge: "85+ Keynotes",
-    image: "/assets/images/categories/cat-business.webp"
+    image: "/assets/images/categories/cat-business.webp?v=2"
   },
   {
     id: "Design",
@@ -373,7 +373,7 @@ export const CATEGORIES_DATA = [
     description: "UI/UX, Spatial computing, Design systems & Creative craft",
     iconName: "Palette",
     badge: "60+ Design Labs",
-    image: "/assets/images/categories/cat-design.webp"
+    image: "/assets/images/categories/cat-design.webp?v=2"
   },
   {
     id: "Education",
@@ -381,6 +381,6 @@ export const CATEGORIES_DATA = [
     description: "Intensives, Hands-on masterclasses & Certifications",
     iconName: "GraduationCap",
     badge: "95+ Masterclasses",
-    image: "/assets/images/categories/cat-education.webp"
+    image: "/assets/images/categories/cat-education.webp?v=2"
   }
 ];
