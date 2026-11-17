@@ -97,8 +97,8 @@ export const EventDetails = () => {
           </button>
 
           <div style={{ display: 'flex', gap: '10px' }}>
-            <button
-              onClick={handleShare}
+            <Link
+              to="/404"
               style={{
                 display: 'inline-flex',
                 alignItems: 'center',
@@ -108,12 +108,14 @@ export const EventDetails = () => {
                 padding: '6px 14px',
                 borderRadius: '8px',
                 background: 'rgba(255, 255, 255, 0.04)',
-                border: '1px solid rgba(255, 255, 255, 0.08)'
+                border: '1px solid rgba(255, 255, 255, 0.08)',
+                textDecoration: 'none',
+                transition: 'all 0.2s ease'
               }}
             >
               <Share2 size={16} />
               <span>Share</span>
-            </button>
+            </Link>
 
             <button
               onClick={() => toggleFavorite(event.id)}
