@@ -1,0 +1,178 @@
+[
+  {
+    "filename": "hero-tech-summit.webp",
+    "dir": "public/assets/images/hero",
+    "dimensions": "1200x675",
+    "format": "WEBP",
+    "sizeKB": "16.36 KB",
+    "under90KB": "YES (PASS)"
+  },
+  {
+    "filename": "hero-mesh-bg.webp",
+    "dir": "public/assets/images/backgrounds",
+    "dimensions": "1440x800",
+    "format": "WEBP",
+    "sizeKB": "16.25 KB",
+    "under90KB": "YES (PASS)"
+  },
+  {
+    "filename": "cat-technology.webp",
+    "dir": "public/assets/images/categories",
+    "dimensions": "600x400",
+    "format": "WEBP",
+    "sizeKB": "7.79 KB",
+    "under90KB": "YES (PASS)"
+  },
+  {
+    "filename": "cat-business.webp",
+    "dir": "public/assets/images/categories",
+    "dimensions": "600x400",
+    "format": "WEBP",
+    "sizeKB": "8.67 KB",
+    "under90KB": "YES (PASS)"
+  },
+  {
+    "filename": "cat-design.webp",
+    "dir": "public/assets/images/categories",
+    "dimensions": "600x400",
+    "format": "WEBP",
+    "sizeKB": "8.63 KB",
+    "under90KB": "YES (PASS)"
+  },
+  {
+    "filename": "cat-education.webp",
+    "dir": "public/assets/images/categories",
+    "dimensions": "600x400",
+    "format": "WEBP",
+    "sizeKB": "10.28 KB",
+    "under90KB": "YES (PASS)"
+  },
+  {
+    "filename": "event-1-nextgen-ai.webp",
+    "dir": "public/assets/images/events",
+    "dimensions": "800x450",
+    "format": "WEBP",
+    "sizeKB": "13.08 KB",
+    "under90KB": "YES (PASS)"
+  },
+  {
+    "filename": "event-2-cloud-scale.webp",
+    "dir": "public/assets/images/events",
+    "dimensions": "800x450",
+    "format": "WEBP",
+    "sizeKB": "13.40 KB",
+    "under90KB": "YES (PASS)"
+  },
+  {
+    "filename": "event-3-venture-scale.webp",
+    "dir": "public/assets/images/events",
+    "dimensions": "800x450",
+    "format": "WEBP",
+    "sizeKB": "11.41 KB",
+    "under90KB": "YES (PASS)"
+  },
+  {
+    "filename": "event-4-design-systems.webp",
+    "dir": "public/assets/images/events",
+    "dimensions": "800x450",
+    "format": "WEBP",
+    "sizeKB": "14.26 KB",
+    "under90KB": "YES (PASS)"
+  },
+  {
+    "filename": "event-5-cybersecurity.webp",
+    "dir": "public/assets/images/events",
+    "dimensions": "800x450",
+    "format": "WEBP",
+    "sizeKB": "12.67 KB",
+    "under90KB": "YES (PASS)"
+  },
+  {
+    "filename": "event-6-product-growth.webp",
+    "dir": "public/assets/images/events",
+    "dimensions": "800x450",
+    "format": "WEBP",
+    "sizeKB": "12.61 KB",
+    "under90KB": "YES (PASS)"
+  },
+  {
+    "filename": "event-7-spatial-ui.webp",
+    "dir": "public/assets/images/events",
+    "dimensions": "800x450",
+    "format": "WEBP",
+    "sizeKB": "13.30 KB",
+    "under90KB": "YES (PASS)"
+  },
+  {
+    "filename": "event-8-fullstack-devops.webp",
+    "dir": "public/assets/images/events",
+    "dimensions": "800x450",
+    "format": "WEBP",
+    "sizeKB": "14.21 KB",
+    "under90KB": "YES (PASS)"
+  },
+  {
+    "filename": "event-9-fintech-disruption.webp",
+    "dir": "public/assets/images/events",
+    "dimensions": "800x450",
+    "format": "WEBP",
+    "sizeKB": "12.42 KB",
+    "under90KB": "YES (PASS)"
+  },
+  {
+    "filename": "event-10-creative-direction.webp",
+    "dir": "public/assets/images/events",
+    "dimensions": "800x450",
+    "format": "WEBP",
+    "sizeKB": "13.94 KB",
+    "under90KB": "YES (PASS)"
+  },
+  {
+    "filename": "event-11-data-engineering.webp",
+    "dir": "public/assets/images/events",
+    "dimensions": "800x450",
+    "format": "WEBP",
+    "sizeKB": "12.86 KB",
+    "under90KB": "YES (PASS)"
+  },
+  {
+    "filename": "event-12-micro-saas.webp",
+    "dir": "public/assets/images/events",
+    "dimensions": "800x450",
+    "format": "WEBP",
+    "sizeKB": "12.87 KB",
+    "under90KB": "YES (PASS)"
+  },
+  {
+    "filename": "org-stackly-labs.webp",
+    "dir": "public/assets/images/organizers",
+    "dimensions": "200x200",
+    "format": "WEBP",
+    "sizeKB": "2.02 KB",
+    "under90KB": "YES (PASS)"
+  },
+  {
+    "filename": "org-dev-collective.webp",
+    "dir": "public/assets/images/organizers",
+    "dimensions": "200x200",
+    "format": "WEBP",
+    "sizeKB": "2.34 KB",
+    "under90KB": "YES (PASS)"
+  },
+  {
+    "filename": "org-design-craft.webp",
+    "dir": "public/assets/images/organizers",
+    "dimensions": "200x200",
+    "format": "WEBP",
+    "sizeKB": "2.32 KB",
+    "under90KB": "YES (PASS)"
+  },
+  {
+    "filename": "org-venture-india.webp",
+    "dir": "public/assets/images/organizers",
+    "dimensions": "200x200",
+    "format": "WEBP",
+    "sizeKB": "2.06 KB",
+    "under90KB": "YES (PASS)"
+  }
+]
