@@ -32,6 +32,18 @@ export const Navbar = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  // Prevent body scroll when mobile menu is open
+  useEffect(() => {
+    if (mobileMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [mobileMenuOpen]);
+
   // Close mobile menu on route change
   useEffect(() => {
     setMobileMenuOpen(false);
@@ -180,59 +192,203 @@ export const Navbar = () => {
         </button>
       </div>
 
-      {/* Mobile Drawer Menu */}
+      {/* Fullscreen Mobile Overlay Menu */}
       {mobileMenuOpen && (
         <div
           className="animate-fade-in"
           style={{
-            background: '#0B0F19',
-            borderBottom: '1px solid rgba(255, 255, 255, 0.1)',
-            padding: '1.25rem 1.5rem',
+            position: 'fixed',
+            top: 0,
+            left: 0,
+            width: '100vw',
+            height: '100vh',
+            height: '100dvh',
+            background: 'radial-gradient(ellipse at top, #111827 0%, #080C14 100%)',
+            zIndex: 9999,
             display: 'flex',
             flexDirection: 'column',
-            gap: '10px'
+            justifyContent: 'space-between',
+            padding: '1.25rem 1.5rem 2.5rem',
+            overflowY: 'auto'
           }}
         >
-          <NavLink
-            to="/"
-            style={navLinkStyle}
-            end
-            onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+          {/* Header inside fullscreen menu */}
+          <div
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'space-between',
+              height: '76px',
+              borderBottom: '1px solid rgba(255, 255, 255, 0.08)',
+              paddingBottom: '0.75rem'
+            }}
           >
-            Home
-          </NavLink>
-          <NavLink to="/events" style={navLinkStyle}>
-            <Compass size={16} />
-            Explore Events
-          </NavLink>
-          <NavLink to="/registrations" style={navLinkStyle}>
-            <Ticket size={16} />
-            My Registrations
-            {totalRegistrations > 0 && (
-              <span
+            <Link
+              to="/"
+              onClick={() => {
+                setMobileMenuOpen(false);
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+              }}
+              style={{
+                display: 'flex',
+                alignItems: 'center',
+                gap: '12px',
+                textDecoration: 'none'
+              }}
+            >
+              <img
+                src="/assets/images/stackly-logo.webp?v=4"
+                alt="STACKLY"
                 style={{
-                  background: '#4F46E5',
-                  color: '#FFFFFF',
-                  fontSize: '0.72rem',
-                  fontWeight: '700',
-                  padding: '2px 8px',
-                  borderRadius: '10px',
-                  marginLeft: 'auto'
+                  height: '38px',
+                  width: 'auto',
+                  objectFit: 'contain',
+                  filter: 'drop-shadow(0 2px 10px rgba(6, 182, 212, 0.35))'
                 }}
-              >
-                {totalRegistrations}
-              </span>
-            )}
-          </NavLink>
+              />
+            </Link>
 
-          <NavLink
-            to="/workshops"
-            className="btn-primary"
-            style={{ width: '100%', marginTop: '8px', justifyContent: 'center' }}
+            <button
+              onClick={() => setMobileMenuOpen(false)}
+              style={{
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                padding: '10px',
+                borderRadius: '12px',
+                color: '#F8FAFC',
+                background: 'rgba(255, 255, 255, 0.08)',
+                border: '1px solid rgba(255, 255, 255, 0.15)',
+                cursor: 'pointer'
+              }}
+              aria-label="Close menu"
+            >
+              <X size={26} />
+            </button>
+          </div>
+
+          {/* Navigation Links in Center */}
+          <div
+            style={{
+              display: 'flex',
+              flexDirection: 'column',
+              gap: '14px',
+              margin: 'auto 0',
+              padding: '2rem 0'
+            }}
           >
-            <Sparkles size={16} />
-            Find Workshops
-          </NavLink>
+            <NavLink
+              to="/"
+              onClick={() => {
+                setMobileMenuOpen(false);
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+              }}
+              style={({ isActive }) => ({
+                display: 'flex',
+                alignItems: 'center',
+                gap: '14px',
+                padding: '16px 20px',
+                borderRadius: '14px',
+                fontSize: '1.2rem',
+                fontWeight: '600',
+                color: isActive ? '#FFFFFF' : '#94A3B8',
+                background: isActive ? 'rgba(79, 70, 229, 0.22)' : 'rgba(255, 255, 255, 0.03)',
+                border: isActive ? '1px solid rgba(99, 102, 241, 0.45)' : '1px solid rgba(255, 255, 255, 0.06)',
+                transition: 'all 0.2s ease'
+              })}
+              end
+            >
+              Home
+            </NavLink>
+
+            <NavLink
+              to="/events"
+              onClick={() => setMobileMenuOpen(false)}
+              style={({ isActive }) => ({
+                display: 'flex',
+                alignItems: 'center',
+                gap: '14px',
+                padding: '16px 20px',
+                borderRadius: '14px',
+                fontSize: '1.2rem',
+                fontWeight: '600',
+                color: isActive ? '#FFFFFF' : '#94A3B8',
+                background: isActive ? 'rgba(79, 70, 229, 0.22)' : 'rgba(255, 255, 255, 0.03)',
+                border: isActive ? '1px solid rgba(99, 102, 241, 0.45)' : '1px solid rgba(255, 255, 255, 0.06)',
+                transition: 'all 0.2s ease'
+              })}
+            >
+              <Compass size={22} color="#06B6D4" />
+              Explore Events
+            </NavLink>
+
+            <NavLink
+              to="/registrations"
+              onClick={() => setMobileMenuOpen(false)}
+              style={({ isActive }) => ({
+                display: 'flex',
+                alignItems: 'center',
+                gap: '14px',
+                padding: '16px 20px',
+                borderRadius: '14px',
+                fontSize: '1.2rem',
+                fontWeight: '600',
+                color: isActive ? '#FFFFFF' : '#94A3B8',
+                background: isActive ? 'rgba(79, 70, 229, 0.22)' : 'rgba(255, 255, 255, 0.03)',
+                border: isActive ? '1px solid rgba(99, 102, 241, 0.45)' : '1px solid rgba(255, 255, 255, 0.06)',
+                transition: 'all 0.2s ease'
+              })}
+            >
+              <Ticket size={22} color="#818CF8" />
+              <span>My Registrations</span>
+              {totalRegistrations > 0 && (
+                <span
+                  style={{
+                    background: '#4F46E5',
+                    color: '#FFFFFF',
+                    fontSize: '0.8rem',
+                    fontWeight: '700',
+                    padding: '3px 10px',
+                    borderRadius: '12px',
+                    marginLeft: 'auto'
+                  }}
+                >
+                  {totalRegistrations}
+                </span>
+              )}
+            </NavLink>
+          </div>
+
+          {/* Bottom Action CTA & Footer */}
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '14px' }}>
+            <NavLink
+              to="/workshops"
+              onClick={() => setMobileMenuOpen(false)}
+              className="btn-primary"
+              style={{
+                width: '100%',
+                justifyContent: 'center',
+                padding: '16px',
+                fontSize: '1.1rem',
+                borderRadius: '14px',
+                boxShadow: '0 8px 24px rgba(79, 70, 229, 0.4)'
+              }}
+            >
+              <Sparkles size={20} />
+              Find Workshops
+            </NavLink>
+
+            <div
+              style={{
+                textAlign: 'center',
+                fontSize: '0.8rem',
+                color: '#64748B',
+                paddingTop: '8px'
+              }}
+            >
+              STACKLY Enterprise Discovery & Registration
+            </div>
+          </div>
         </div>
       )}
 
