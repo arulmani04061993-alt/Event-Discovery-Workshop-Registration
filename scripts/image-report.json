@@ -4,7 +4,7 @@
     "dir": "public/assets/images/hero",
     "dimensions": "1200x675",
     "format": "WEBP",
-    "sizeKB": "16.36 KB",
+    "sizeKB": "10.00 KB",
     "under90KB": "YES (PASS)"
   },
   {
@@ -12,7 +12,7 @@
     "dir": "public/assets/images/backgrounds",
     "dimensions": "1440x800",
     "format": "WEBP",
-    "sizeKB": "16.25 KB",
+    "sizeKB": "12.33 KB",
     "under90KB": "YES (PASS)"
   },
   {
@@ -20,7 +20,7 @@
     "dir": "public/assets/images/categories",
     "dimensions": "600x400",
     "format": "WEBP",
-    "sizeKB": "7.79 KB",
+    "sizeKB": "4.36 KB",
     "under90KB": "YES (PASS)"
   },
   {
@@ -28,7 +28,7 @@
     "dir": "public/assets/images/categories",
     "dimensions": "600x400",
     "format": "WEBP",
-    "sizeKB": "8.67 KB",
+    "sizeKB": "4.75 KB",
     "under90KB": "YES (PASS)"
   },
   {
@@ -36,7 +36,7 @@
     "dir": "public/assets/images/categories",
     "dimensions": "600x400",
     "format": "WEBP",
-    "sizeKB": "8.63 KB",
+    "sizeKB": "5.09 KB",
     "under90KB": "YES (PASS)"
   },
   {
@@ -44,7 +44,7 @@
     "dir": "public/assets/images/categories",
     "dimensions": "600x400",
     "format": "WEBP",
-    "sizeKB": "10.28 KB",
+    "sizeKB": "5.26 KB",
     "under90KB": "YES (PASS)"
   },
   {
@@ -52,7 +52,7 @@
     "dir": "public/assets/images/events",
     "dimensions": "800x450",
     "format": "WEBP",
-    "sizeKB": "13.08 KB",
+    "sizeKB": "6.79 KB",
     "under90KB": "YES (PASS)"
   },
   {
@@ -60,7 +60,7 @@
     "dir": "public/assets/images/events",
     "dimensions": "800x450",
     "format": "WEBP",
-    "sizeKB": "13.40 KB",
+    "sizeKB": "6.57 KB",
     "under90KB": "YES (PASS)"
   },
   {
@@ -68,7 +68,7 @@
     "dir": "public/assets/images/events",
     "dimensions": "800x450",
     "format": "WEBP",
-    "sizeKB": "11.41 KB",
+    "sizeKB": "5.85 KB",
     "under90KB": "YES (PASS)"
   },
   {
@@ -76,7 +76,7 @@
     "dir": "public/assets/images/events",
     "dimensions": "800x450",
     "format": "WEBP",
-    "sizeKB": "14.26 KB",
+    "sizeKB": "6.16 KB",
     "under90KB": "YES (PASS)"
   },
   {
@@ -84,7 +84,7 @@
     "dir": "public/assets/images/events",
     "dimensions": "800x450",
     "format": "WEBP",
-    "sizeKB": "12.67 KB",
+    "sizeKB": "6.01 KB",
     "under90KB": "YES (PASS)"
   },
   {
@@ -92,7 +92,7 @@
     "dir": "public/assets/images/events",
     "dimensions": "800x450",
     "format": "WEBP",
-    "sizeKB": "12.61 KB",
+    "sizeKB": "5.98 KB",
     "under90KB": "YES (PASS)"
   },
   {
@@ -100,7 +100,7 @@
     "dir": "public/assets/images/events",
     "dimensions": "800x450",
     "format": "WEBP",
-    "sizeKB": "13.30 KB",
+    "sizeKB": "5.51 KB",
     "under90KB": "YES (PASS)"
   },
   {
@@ -108,7 +108,7 @@
     "dir": "public/assets/images/events",
     "dimensions": "800x450",
     "format": "WEBP",
-    "sizeKB": "14.21 KB",
+    "sizeKB": "6.53 KB",
     "under90KB": "YES (PASS)"
   },
   {
@@ -116,7 +116,7 @@
     "dir": "public/assets/images/events",
     "dimensions": "800x450",
     "format": "WEBP",
-    "sizeKB": "12.42 KB",
+    "sizeKB": "5.86 KB",
     "under90KB": "YES (PASS)"
   },
   {
@@ -124,7 +124,7 @@
     "dir": "public/assets/images/events",
     "dimensions": "800x450",
     "format": "WEBP",
-    "sizeKB": "13.94 KB",
+    "sizeKB": "6.38 KB",
     "under90KB": "YES (PASS)"
   },
   {
@@ -132,7 +132,7 @@
     "dir": "public/assets/images/events",
     "dimensions": "800x450",
     "format": "WEBP",
-    "sizeKB": "12.86 KB",
+    "sizeKB": "6.57 KB",
     "under90KB": "YES (PASS)"
   },
   {
@@ -140,7 +140,7 @@
     "dir": "public/assets/images/events",
     "dimensions": "800x450",
     "format": "WEBP",
-    "sizeKB": "12.87 KB",
+    "sizeKB": "5.98 KB",
     "under90KB": "YES (PASS)"
   },
   {
@@ -148,7 +148,7 @@
     "dir": "public/assets/images/organizers",
     "dimensions": "200x200",
     "format": "WEBP",
-    "sizeKB": "2.02 KB",
+    "sizeKB": "2.25 KB",
     "under90KB": "YES (PASS)"
   },
   {
@@ -156,7 +156,7 @@
     "dir": "public/assets/images/organizers",
     "dimensions": "200x200",
     "format": "WEBP",
-    "sizeKB": "2.34 KB",
+    "sizeKB": "2.37 KB",
     "under90KB": "YES (PASS)"
   },
   {
@@ -164,7 +164,7 @@
     "dir": "public/assets/images/organizers",
     "dimensions": "200x200",
     "format": "WEBP",
-    "sizeKB": "2.32 KB",
+    "sizeKB": "2.00 KB",
     "under90KB": "YES (PASS)"
   },
   {
@@ -172,7 +172,7 @@
     "dir": "public/assets/images/organizers",
     "dimensions": "200x200",
     "format": "WEBP",
-    "sizeKB": "2.06 KB",
+    "sizeKB": "2.05 KB",
     "under90KB": "YES (PASS)"
   }
 ]

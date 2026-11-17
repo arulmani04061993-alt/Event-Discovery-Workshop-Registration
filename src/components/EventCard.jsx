@@ -5,17 +5,14 @@ import { useRegistrations } from '../hooks/useRegistrations';
 import { 
   Calendar, 
   MapPin, 
-  Clock, 
   Users, 
-  ArrowRight, 
   Heart, 
-  Sparkles,
-  CheckCircle
+  Sparkles
 } from 'lucide-react';
 
 export const EventCard = ({ event }) => {
   const { isFavorite, toggleFavorite } = useEvents();
-  const { openRegistrationModal, isAlreadyRegistered } = useRegistrations();
+  const { openRegistrationModal } = useRegistrations();
 
   const favorited = isFavorite(event.id);
   const seatsLeft = event.availableSeats;
@@ -54,7 +51,7 @@ export const EventCard = ({ event }) => {
         e.currentTarget.style.boxShadow = 'var(--shadow-lg)';
       }}
     >
-      {/* Event Image & Badges */}
+      {/* Event Image Banner with Clear Floating Badges */}
       <div style={{ position: 'relative', width: '100%', aspectRatio: '16/9', overflow: 'hidden' }}>
         <img
           src={event.image}
@@ -64,24 +61,24 @@ export const EventCard = ({ event }) => {
             width: '100%',
             height: '100%',
             objectFit: 'cover',
-            transition: 'transform 0.5s ease'
+            display: 'block'
           }}
           onError={(e) => {
-            // Graceful fallback if any path has an issue
             e.currentTarget.src = '/assets/images/hero/hero-tech-summit.webp';
           }}
         />
 
-        {/* Gradient Overlay for contrast */}
+        {/* Subtle Bottom vignette so badge contrasts clearly */}
         <div
           style={{
             position: 'absolute',
             inset: 0,
-            background: 'linear-gradient(180deg, rgba(9, 13, 22, 0.2) 0%, rgba(9, 13, 22, 0.8) 100%)'
+            background: 'linear-gradient(180deg, rgba(9, 13, 22, 0.4) 0%, rgba(9, 13, 22, 0.1) 40%, rgba(9, 13, 22, 0.8) 100%)',
+            pointerEvents: 'none'
           }}
         />
 
-        {/* Top Badges */}
+        {/* Top Badges: Category & Favorite Button */}
         <div
           style={{
             position: 'absolute',
@@ -91,10 +88,18 @@ export const EventCard = ({ event }) => {
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'space-between',
-            gap: '8px'
+            gap: '8px',
+            zIndex: 2
           }}
         >
-          <span className={`badge ${getBadgeClass(event.category)}`}>
+          <span
+            className={`badge ${getBadgeClass(event.category)}`}
+            style={{
+              backdropFilter: 'blur(8px)',
+              WebkitBackdropFilter: 'blur(8px)',
+              boxShadow: '0 4px 10px rgba(0,0,0,0.4)'
+            }}
+          >
             {event.category}
           </span>
 
@@ -109,13 +114,15 @@ export const EventCard = ({ event }) => {
               width: '36px',
               height: '36px',
               borderRadius: '50%',
-              background: 'rgba(9, 13, 22, 0.7)',
+              background: 'rgba(9, 13, 22, 0.8)',
               backdropFilter: 'blur(8px)',
-              border: '1px solid rgba(255, 255, 255, 0.15)',
+              WebkitBackdropFilter: 'blur(8px)',
+              border: '1px solid rgba(255, 255, 255, 0.2)',
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
               color: favorited ? '#F43F5E' : '#FFFFFF',
+              boxShadow: '0 4px 10px rgba(0,0,0,0.4)',
               transition: 'all 0.2s ease'
             }}
           >
@@ -123,24 +130,25 @@ export const EventCard = ({ event }) => {
           </button>
         </div>
 
-        {/* Featured Tag */}
+        {/* Featured Tag (clean single badge, no overlapping text) */}
         {event.featured && (
           <div
             style={{
               position: 'absolute',
               bottom: '12px',
               left: '12px',
-              background: 'rgba(6, 182, 212, 0.2)',
-              border: '1px solid rgba(6, 182, 212, 0.4)',
-              color: '#38BDF8',
+              background: 'rgba(6, 182, 212, 0.9)',
+              color: '#FFFFFF',
               borderRadius: '6px',
-              padding: '2px 8px',
+              padding: '3px 9px',
               fontSize: '0.72rem',
               fontWeight: '700',
               display: 'flex',
               alignItems: 'center',
               gap: '4px',
-              letterSpacing: '0.04em'
+              letterSpacing: '0.04em',
+              boxShadow: '0 2px 8px rgba(0,0,0,0.4)',
+              zIndex: 2
             }}
           >
             <Sparkles size={12} />
