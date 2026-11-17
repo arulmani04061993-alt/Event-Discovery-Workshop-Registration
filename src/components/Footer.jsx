@@ -1,5 +1,5 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 import { 
   Layers, 
   Mail, 
@@ -16,6 +16,14 @@ import {
 } from 'lucide-react';
 
 export const Footer = () => {
+  const navigate = useNavigate();
+  const [dispatchEmail, setDispatchEmail] = useState('');
+
+  const handleDispatchSubmit = (e) => {
+    e.preventDefault();
+    // Navigates to 404 page when user submits their email in Executive Dispatch
+    navigate('/404');
+  };
   return (
     <footer
       style={{
@@ -173,6 +181,11 @@ export const Footer = () => {
                 </Link>
               </li>
               <li>
+                <Link to="/workshops" style={{ color: '#94A3B8', fontSize: '0.9rem', transition: 'color 0.2s' }}>
+                  Find Workshops
+                </Link>
+              </li>
+              <li>
                 <Link to="/events?category=Business" style={{ color: '#94A3B8', fontSize: '0.9rem' }}>
                   Business & Leadership
                 </Link>
@@ -240,7 +253,8 @@ export const Footer = () => {
             <p style={{ fontSize: '0.88rem', color: '#94A3B8', marginBottom: '1rem', lineHeight: 1.5 }}>
               Receive monthly invitations to invite-only roundtables and early-bird summit releases.
             </p>
-            <div
+            <form
+              onSubmit={handleDispatchSubmit}
               style={{
                 display: 'flex',
                 background: 'rgba(255, 255, 255, 0.05)',
@@ -252,6 +266,9 @@ export const Footer = () => {
             >
               <input
                 type="email"
+                required
+                value={dispatchEmail}
+                onChange={(e) => setDispatchEmail(e.target.value)}
                 placeholder="Enter work email..."
                 style={{
                   background: 'transparent',
@@ -259,12 +276,12 @@ export const Footer = () => {
                   color: '#FFFFFF',
                   padding: '8px 12px',
                   fontSize: '0.85rem',
-                  flex: 1
+                  flex: 1,
+                  outline: 'none'
                 }}
               />
               <button
-                type="button"
-                onClick={() => alert('Thank you for subscribing to STACKLY Executive Dispatch!')}
+                type="submit"
                 style={{
                   background: '#4F46E5',
                   color: '#FFFFFF',
@@ -274,12 +291,13 @@ export const Footer = () => {
                   fontWeight: '600',
                   display: 'flex',
                   alignItems: 'center',
-                  gap: '4px'
+                  gap: '4px',
+                  cursor: 'pointer'
                 }}
               >
                 Join
               </button>
-            </div>
+            </form>
           </div>
         </div>
 
