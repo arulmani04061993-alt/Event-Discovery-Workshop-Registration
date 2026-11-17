@@ -100,11 +100,7 @@ export const MyRegistrations = () => {
 
             {/* Grid of Registration Cards */}
             <div
-              style={{
-                display: 'grid',
-                gridTemplateColumns: 'repeat(auto-fill, minmax(360px, 1fr))',
-                gap: '1.75rem'
-              }}
+              className="responsive-grid-cards"
             >
               {registrations.map((reg) => (
                 <div

@@ -523,11 +523,7 @@ export const EventDetails = () => {
             </div>
 
             <div
-              style={{
-                display: 'grid',
-                gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
-                gap: '1.75rem'
-              }}
+              className="responsive-grid-cards"
             >
               {relatedEvents.map((relEvent) => (
                 <EventCard key={relEvent.id} event={relEvent} />

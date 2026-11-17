@@ -71,6 +71,19 @@ input, select, textarea {
   max-width: var(--container-max);
   margin: 0 auto;
   padding: 0 1.5rem;
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 0 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 0 0.875rem;
+  }
 }
 
 .glass-panel {
@@ -191,4 +204,85 @@ input, select, textarea {
 .btn-danger:hover {
   background: rgba(244, 63, 94, 0.25);
   border-color: #f43f5e;
+}
+
+/* ==========================================================================
+   Comprehensive Responsive System (Mobile, Tablet, Desktop)
+   ========================================================================== */
+
+/* Universal Responsive Utilities */
+img, svg, video, canvas {
+  max-width: 100%;
+}
+
+input, select, textarea, button {
+  font-size: 16px; /* Prevents auto-zoom on iOS devices */
+}
+
+/* Grid & Layout Responsive Helpers */
+.responsive-grid-cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.75rem;
+  width: 100%;
+}
+
+@media (max-width: 1024px) {
+  .responsive-grid-cards {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .responsive-grid-cards {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+}
+
+/* Tablet Optimizations (max-width: 1024px) */
+@media (max-width: 1024px) {
+  .btn-primary, .btn-secondary {
+    padding: 0.65rem 1.25rem;
+    font-size: 0.9rem;
+  }
+
+  .glass-panel {
+    border-radius: var(--radius-md);
+  }
+}
+
+/* Mobile Devices (max-width: 768px) */
+@media (max-width: 768px) {
+  h1 {
+    line-height: 1.2 !important;
+  }
+  
+  h2 {
+    line-height: 1.25 !important;
+  }
+
+  /* Full-width interactive touch targets on mobile */
+  .mobile-w-full {
+    width: 100% !important;
+  }
+
+  .mobile-flex-col {
+    flex-direction: column !important;
+    align-items: stretch !important;
+  }
+
+  .mobile-text-center {
+    text-align: center !important;
+  }
+}
+
+/* Small Handhelds (max-width: 480px) */
+@media (max-width: 480px) {
+  .btn-primary, .btn-secondary {
+    width: 100%;
+    justify-content: center;
+    padding: 0.75rem 1rem;
+  }
 }

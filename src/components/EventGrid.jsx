@@ -8,12 +8,7 @@ export const EventGrid = ({ events, emptyState }) => {
 
   return (
     <div
-      style={{
-        display: 'grid',
-        gridTemplateColumns: 'repeat(auto-fill, minmax(320px, 1fr))',
-        gap: '1.75rem',
-        width: '100%'
-      }}
+      className="responsive-grid-cards"
     >
       {events.map((event) => (
         <EventCard key={event.id} event={event} />

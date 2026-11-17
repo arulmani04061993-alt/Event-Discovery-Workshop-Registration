@@ -64,13 +64,9 @@ export const FeaturedEvents = ({ events }) => {
           </Link>
         </div>
 
-        {/* 4 Cards Grid */}
+        {/* Cards Grid */}
         <div
-          style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(290px, 1fr))',
-            gap: '1.75rem'
-          }}
+          className="responsive-grid-cards"
         >
           {featured.map((event) => (
             <EventCard key={event.id} event={event} />

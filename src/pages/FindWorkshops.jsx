@@ -242,11 +242,7 @@ export const FindWorkshops = () => {
           />
         ) : (
           <div
-            style={{
-              display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fill, minmax(320px, 1fr))',
-              gap: '1.75rem'
-            }}
+            className="responsive-grid-cards"
           >
             {filteredWorkshops.map((ws) => (
               <EventCard key={ws.id} event={ws} />

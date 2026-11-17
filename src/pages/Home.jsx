@@ -260,11 +260,7 @@ export const Home = () => {
 
           {/* Grid of upcoming events */}
           <div
-            style={{
-              display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fill, minmax(320px, 1fr))',
-              gap: '1.75rem'
-            }}
+            className="responsive-grid-cards"
           >
             {upcomingEvents.map((event) => (
               <EventCard key={event.id} event={event} />
