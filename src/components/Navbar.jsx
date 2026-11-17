@@ -74,55 +74,28 @@ export const Navbar = () => {
           height: '76px'
         }}
       >
-        {/* Brand Logo */}
+        {/* Brand Logo with User Custom WebP Logo */}
         <Link
           to="/"
           style={{
             display: 'flex',
             alignItems: 'center',
-            gap: '10px',
+            gap: '12px',
             textDecoration: 'none'
           }}
         >
-          <div
+          <img
+            src="/assets/images/stackly-logo.webp"
+            alt="STACKLY"
             style={{
-              width: '40px',
-              height: '40px',
-              borderRadius: '10px',
-              background: 'linear-gradient(135deg, #4F46E5 0%, #06B6D4 100%)',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              color: '#FFFFFF',
-              boxShadow: '0 4px 12px rgba(79, 70, 229, 0.4)'
+              height: '38px',
+              width: 'auto',
+              maxHeight: '40px',
+              objectFit: 'contain',
+              display: 'block',
+              filter: 'drop-shadow(0 2px 8px rgba(255, 45, 85, 0.25))'
             }}
-          >
-            <Layers size={22} strokeWidth={2.4} />
-          </div>
-          <div style={{ display: 'flex', flexDirection: 'column' }}>
-            <span
-              style={{
-                fontSize: '1.4rem',
-                fontWeight: '800',
-                letterSpacing: '-0.03em',
-                color: '#FFFFFF',
-                lineHeight: 1
-              }}
-            >
-              STACKLY
-            </span>
-            <span
-              style={{
-                fontSize: '0.68rem',
-                fontWeight: '600',
-                letterSpacing: '0.12em',
-                color: '#06B6D4',
-                textTransform: 'uppercase'
-              }}
-            >
-              Conferences & Labs
-            </span>
-          </div>
+          />
         </Link>
 
         {/* Desktop Navigation Links */}

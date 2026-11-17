@@ -49,37 +49,23 @@ export const Footer = () => {
             <Link
               to="/"
               style={{
-                display: 'flex',
+                display: 'inline-flex',
                 alignItems: 'center',
-                gap: '10px',
                 textDecoration: 'none',
-                marginBottom: '1rem'
+                marginBottom: '1.25rem'
               }}
             >
-              <div
+              <img
+                src="/assets/images/stackly-logo.webp"
+                alt="STACKLY"
                 style={{
-                  width: '38px',
-                  height: '38px',
-                  borderRadius: '10px',
-                  background: 'linear-gradient(135deg, #4F46E5 0%, #06B6D4 100%)',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  color: '#FFFFFF'
+                  height: '42px',
+                  width: 'auto',
+                  objectFit: 'contain',
+                  display: 'block',
+                  filter: 'drop-shadow(0 2px 10px rgba(255, 45, 85, 0.2))'
                 }}
-              >
-                <Layers size={20} strokeWidth={2.4} />
-              </div>
-              <span
-                style={{
-                  fontSize: '1.35rem',
-                  fontWeight: '800',
-                  letterSpacing: '-0.02em',
-                  color: '#FFFFFF'
-                }}
-              >
-                STACKLY
-              </span>
+              />
             </Link>
 
             <p style={{ fontSize: '0.9rem', color: '#94A3B8', lineHeight: 1.6, marginBottom: '1.25rem' }}>

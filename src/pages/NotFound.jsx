@@ -27,22 +27,19 @@ export const NotFound = () => {
         background: 'radial-gradient(circle at 50% 30%, rgba(79, 70, 229, 0.18) 0%, rgba(6, 182, 212, 0.08) 40%, #090D16 80%)'
       }}
     >
-      {/* Brand Icon */}
-      <div
-        style={{
-          width: '56px',
-          height: '56px',
-          borderRadius: '16px',
-          background: 'linear-gradient(135deg, #4F46E5 0%, #06B6D4 100%)',
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-          color: '#FFFFFF',
-          boxShadow: '0 8px 24px rgba(79, 70, 229, 0.4)',
-          marginBottom: '2rem'
-        }}
-      >
-        <Layers size={30} strokeWidth={2.4} />
+      {/* Brand Logo with User WebP Logo */}
+      <div style={{ marginBottom: '2rem' }}>
+        <img
+          src="/assets/images/stackly-logo.webp"
+          alt="STACKLY"
+          style={{
+            height: '48px',
+            width: 'auto',
+            objectFit: 'contain',
+            display: 'block',
+            filter: 'drop-shadow(0 4px 14px rgba(255, 45, 85, 0.3))'
+          }}
+        />
       </div>
 
       <div
