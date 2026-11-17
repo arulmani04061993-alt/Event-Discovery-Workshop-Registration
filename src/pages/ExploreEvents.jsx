@@ -12,7 +12,14 @@ import {
   RotateCcw, 
   Compass, 
   Layers,
-  Sparkles
+  Sparkles,
+  ShieldCheck,
+  Calendar,
+  Award,
+  Users,
+  CheckCircle2,
+  Clock,
+  ExternalLink
 } from 'lucide-react';
 
 export const ExploreEvents = () => {
@@ -336,6 +343,226 @@ export const ExploreEvents = () => {
             />
           }
         />
+
+        {/* Extra Rich Content Section 1: Event Discovery Perks & Features */}
+        <section style={{ marginTop: '5rem', paddingTop: '3.5rem', borderTop: '1px solid rgba(255, 255, 255, 0.08)' }}>
+          <div style={{ textAlign: 'center', maxWidth: '640px', margin: '0 auto 2.5rem auto' }}>
+            <span
+              style={{
+                fontSize: '0.8rem',
+                fontWeight: '700',
+                color: '#06B6D4',
+                letterSpacing: '0.08em',
+                textTransform: 'uppercase'
+              }}
+            >
+              PREMIUM WORKSHOP EXPERIENCE
+            </span>
+            <h2
+              style={{
+                fontSize: 'clamp(1.8rem, 3vw, 2.4rem)',
+                fontWeight: '800',
+                color: '#FFFFFF',
+                marginTop: '6px'
+              }}
+            >
+              What to Expect at Every STACKLY Event
+            </h2>
+            <p style={{ fontSize: '0.95rem', color: '#94A3B8', marginTop: '8px' }}>
+              All events in our directory adhere to the highest enterprise standards of quality, zero sponsor fluff, and actionable takeaways.
+            </p>
+          </div>
+
+          <div
+            style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))',
+              gap: '1.5rem',
+              marginBottom: '3.5rem'
+            }}
+          >
+            <div
+              className="glass-panel"
+              style={{
+                padding: '1.75rem',
+                borderRadius: '16px',
+                border: '1px solid rgba(255, 255, 255, 0.08)'
+              }}
+            >
+              <div
+                style={{
+                  width: '44px',
+                  height: '44px',
+                  borderRadius: '12px',
+                  background: 'rgba(79, 70, 229, 0.15)',
+                  border: '1px solid rgba(79, 70, 229, 0.35)',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  color: '#818CF8',
+                  marginBottom: '1rem'
+                }}
+              >
+                <Award size={22} />
+              </div>
+              <h3 style={{ fontSize: '1.1rem', fontWeight: '700', color: '#FFFFFF', marginBottom: '8px' }}>
+                Verifiable Credentials
+              </h3>
+              <p style={{ fontSize: '0.88rem', color: '#94A3B8', lineHeight: 1.6 }}>
+                Receive official certificates of attendance and GitHub verified project credentials backed by organizer guilds.
+              </p>
+            </div>
+
+            <div
+              className="glass-panel"
+              style={{
+                padding: '1.75rem',
+                borderRadius: '16px',
+                border: '1px solid rgba(255, 255, 255, 0.08)'
+              }}
+            >
+              <div
+                style={{
+                  width: '44px',
+                  height: '44px',
+                  borderRadius: '12px',
+                  background: 'rgba(6, 182, 212, 0.15)',
+                  border: '1px solid rgba(6, 182, 212, 0.35)',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  color: '#06B6D4',
+                  marginBottom: '1rem'
+                }}
+              >
+                <Users size={22} />
+              </div>
+              <h3 style={{ fontSize: '1.1rem', fontWeight: '700', color: '#FFFFFF', marginBottom: '8px' }}>
+                Cohort-Based Learning
+              </h3>
+              <p style={{ fontSize: '0.88rem', color: '#94A3B8', lineHeight: 1.6 }}>
+                Intimate room sizes (50 to 150 practitioners) ensuring 1:1 engagement with speakers, mentors, and fellow senior engineers.
+              </p>
+            </div>
+
+            <div
+              className="glass-panel"
+              style={{
+                padding: '1.75rem',
+                borderRadius: '16px',
+                border: '1px solid rgba(255, 255, 255, 0.08)'
+              }}
+            >
+              <div
+                style={{
+                  width: '44px',
+                  height: '44px',
+                  borderRadius: '12px',
+                  background: 'rgba(16, 185, 129, 0.15)',
+                  border: '1px solid rgba(16, 185, 129, 0.35)',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  color: '#10B981',
+                  marginBottom: '1rem'
+                }}
+              >
+                <ShieldCheck size={22} />
+              </div>
+              <h3 style={{ fontSize: '1.1rem', fontWeight: '700', color: '#FFFFFF', marginBottom: '8px' }}>
+                Zero Sales Pitches
+              </h3>
+              <p style={{ fontSize: '0.88rem', color: '#94A3B8', lineHeight: 1.6 }}>
+                Content is vetted to ensure architecture teardowns, live terminal workflows, and raw source code instead of corporate pitches.
+              </p>
+            </div>
+
+            <div
+              className="glass-panel"
+              style={{
+                padding: '1.75rem',
+                borderRadius: '16px',
+                border: '1px solid rgba(255, 255, 255, 0.08)'
+              }}
+            >
+              <div
+                style={{
+                  width: '44px',
+                  height: '44px',
+                  borderRadius: '12px',
+                  background: 'rgba(245, 158, 11, 0.15)',
+                  border: '1px solid rgba(245, 158, 11, 0.35)',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  color: '#F59E0B',
+                  marginBottom: '1rem'
+                }}
+              >
+                <Clock size={22} />
+              </div>
+              <h3 style={{ fontSize: '1.1rem', fontWeight: '700', color: '#FFFFFF', marginBottom: '8px' }}>
+                Recorded & Synchronized
+              </h3>
+              <p style={{ fontSize: '0.88rem', color: '#94A3B8', lineHeight: 1.6 }}>
+                Registered attendees gain lifelong access to keynote recordings, private slide repos, and code samples.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        {/* Extra Rich Content Section 2: Host or Propose a Workshop CTA */}
+        <section>
+          <div
+            className="glass-panel"
+            style={{
+              padding: 'clamp(2rem, 5vw, 3.5rem)',
+              borderRadius: '24px',
+              background: 'linear-gradient(135deg, rgba(30, 27, 75, 0.8) 0%, rgba(15, 23, 42, 0.95) 100%)',
+              border: '1px solid rgba(99, 102, 241, 0.35)',
+              display: 'flex',
+              flexWrap: 'wrap',
+              alignItems: 'center',
+              justifyContent: 'space-between',
+              gap: '2rem'
+            }}
+          >
+            <div style={{ maxWidth: '620px' }}>
+              <div
+                style={{
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: '6px',
+                  color: '#06B6D4',
+                  fontSize: '0.8rem',
+                  fontWeight: '700',
+                  textTransform: 'uppercase',
+                  marginBottom: '0.75rem'
+                }}
+              >
+                <Sparkles size={16} />
+                <span>COMMUNITY & ENTERPRISE PARTNERSHIP</span>
+              </div>
+              <h3 style={{ fontSize: 'clamp(1.6rem, 2.5vw, 2.2rem)', fontWeight: '800', color: '#FFFFFF', marginBottom: '0.75rem' }}>
+                Are you organizing a conference or masterclass?
+              </h3>
+              <p style={{ fontSize: '0.95rem', color: '#CBD5E1', lineHeight: 1.6 }}>
+                List your event on STACKLY to reach our collective of 45,000+ senior architects, software engineers, and founders across India. Get verified organizer status and effortless registration management.
+              </p>
+            </div>
+
+            <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap' }}>
+              <button
+                onClick={() => alert('Partner onboarding is opening soon! Contact partnerships@stackly.io for priority review.')}
+                className="btn-primary"
+                style={{ padding: '0.85rem 1.8rem', fontSize: '0.95rem' }}
+              >
+                <Sparkles size={18} />
+                Partner as an Organizer
+              </button>
+            </div>
+          </div>
+        </section>
       </div>
     </div>
   );
