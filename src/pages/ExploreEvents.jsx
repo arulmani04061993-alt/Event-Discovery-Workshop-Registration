@@ -1,5 +1,5 @@
 import React, { useState, useMemo } from 'react';
-import { useSearchParams } from 'react-router-dom';
+import { useSearchParams, Link } from 'react-router-dom';
 import { useEvents } from '../hooks/useEvents';
 import EventCard from '../components/EventCard';
 import EventGrid from '../components/EventGrid';
@@ -552,14 +552,14 @@ export const ExploreEvents = () => {
             </div>
 
             <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap' }}>
-              <button
-                onClick={() => alert('Partner onboarding is opening soon! Contact partnerships@stackly.io for priority review.')}
+              <Link
+                to="/404"
                 className="btn-primary"
                 style={{ padding: '0.85rem 1.8rem', fontSize: '0.95rem' }}
               >
                 <Sparkles size={18} />
                 Partner as an Organizer
-              </button>
+              </Link>
             </div>
           </div>
         </section>
