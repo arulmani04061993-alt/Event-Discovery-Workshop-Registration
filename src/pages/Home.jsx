@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useEvents } from '../hooks/useEvents';
 import { CATEGORIES_DATA } from '../data/events';
 import HeroSection from '../components/HeroSection';
@@ -15,7 +15,9 @@ import {
   Calendar,
   CheckCircle2,
   TrendingUp,
-  Globe2
+  Globe2,
+  Star,
+  ChevronDown
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
@@ -28,9 +30,62 @@ export const Home = () => {
   // Upcoming upcoming events (first 6 non-featured or mixed)
   const upcomingEvents = events.slice(0, 6);
 
+  // FAQ open item state
+  const [openFaq, setOpenFaq] = useState(0);
+
+  const testimonials = [
+    {
+      name: "Dr. Arvind Swaminathan",
+      role: "VP of AI Systems, HyperScale Labs",
+      company: "HyperScale",
+      avatar: "/assets/images/organizers/org-stackly-labs.webp?v=3",
+      text: "The NextGen AI Summit through STACKLY was phenomenal. Unlike traditional sales-heavy conferences, the deep technical architecture teardowns and hands-on LLM optimization sessions were top notch.",
+      rating: 5
+    },
+    {
+      name: "Neha Sundaram",
+      role: "Principal Product Architect",
+      company: "CloudVenture Inc.",
+      avatar: "/assets/images/organizers/org-design-craft.webp?v=3",
+      text: "Securing passes was instant, and the venue organization in Bengaluru was world-class. Connecting directly with distributed systems engineers saved our team months of roadmap trial and error.",
+      rating: 5
+    },
+    {
+      name: "Karthik Raghavan",
+      role: "Founder & CTO",
+      company: "FinStack Global",
+      avatar: "/assets/images/organizers/org-venture-india.webp?v=3",
+      text: "The Venture Scale and FinTech conclaves provided unmatched institutional networking. Meeting genuine angel syndicates and series-A founders under one roof made this an invaluable event.",
+      rating: 5
+    }
+  ];
+
+  const faqs = [
+    {
+      q: "How does STACKLY workshop registration work?",
+      a: "STACKLY connects you directly with verified technical conferences and masterclasses. Simply click 'Register Now' on any event, provide your full name, work email, and contact number. An official STACKLY Digital Pass ID is minted instantly and synchronized to your local dashboard without tedious payment gateways."
+    },
+    {
+      q: "Are the workshops and conferences completely complimentary?",
+      a: "Yes! All featured summits and workshops listed on STACKLY are sponsored by our vetted industry partners, research institutions, and engineering collectives. Seats are complimentary but strictly limited by venue capacity to maintain high-density learning environments."
+    },
+    {
+      q: "Can I cancel my registration if my schedule changes?",
+      a: "Absolutely. Under the 'My Registrations' page, every confirmed pass includes a 1-click 'Cancel Registration' button with confirmation. When you cancel, your reserved seat is immediately restored to the public availability pool for fellow engineers on the waitlist."
+    },
+    {
+      q: "Do I receive a certificate of completion or session materials?",
+      a: "Yes! Every participant who registers through STACKLY receives complete session repositories, workshop slide decks, and a verifiable digital Certificate of Participation issued by the respective event organizer."
+    },
+    {
+      q: "Are the event images and schedules up to date?",
+      a: "All conference schedules, venue addresses across Bengaluru, Hyderabad, Mumbai, Delhi NCR, and Pune, along with organizer badges, are verified and updated regularly by the STACKLY editorial team."
+    }
+  ];
+
   return (
     <div className="animate-fade-in">
-      {/* 1. Hero Section */}
+      {/* 1. Hero Section (Previous Original Clean UI) */}
       <HeroSection featuredEvent={primaryHeroEvent} />
 
       {/* 2. Platform Statistics Banner */}
@@ -449,7 +504,127 @@ export const Home = () => {
         </div>
       </section>
 
-      {/* 8. Newsletter-Style Visual CTA */}
+      {/* 8. TESTIMONIALS SECTION (From user screenshot 1: Trusted by 45,000+ Practitioners) */}
+      <section style={{ padding: '4rem 0' }}>
+        <div className="container">
+          <div style={{ textAlign: 'center', maxWidth: '640px', margin: '0 auto 3rem auto' }}>
+            <span style={{ fontSize: '0.8rem', fontWeight: '700', color: '#818CF8', letterSpacing: '0.08em', textTransform: 'uppercase' }}>
+              ENGINEER & EXECUTIVE VOICES
+            </span>
+            <h2 style={{ fontSize: 'clamp(1.8rem, 3vw, 2.6rem)', fontWeight: '800', color: '#FFFFFF', marginTop: '6px' }}>
+              Trusted by 45,000+ Practitioners
+            </h2>
+          </div>
+
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '1.75rem' }}>
+            {testimonials.map((t, idx) => (
+              <div
+                key={idx}
+                className="glass-panel"
+                style={{
+                  padding: '2rem',
+                  borderRadius: '18px',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  justifyContent: 'space-between',
+                  border: '1px solid rgba(255, 255, 255, 0.08)'
+                }}
+              >
+                <div>
+                  <div style={{ display: 'flex', gap: '4px', marginBottom: '1.25rem' }}>
+                    {[...Array(t.rating)].map((_, r) => (
+                      <Star key={r} size={18} fill="#F59E0B" color="#F59E0B" />
+                    ))}
+                  </div>
+                  <p style={{ fontSize: '0.95rem', color: '#CBD5E1', lineHeight: 1.6, marginBottom: '1.5rem', fontStyle: 'italic' }}>
+                    "{t.text}"
+                  </p>
+                </div>
+
+                <div style={{ display: 'flex', alignItems: 'center', gap: '12px', borderTop: '1px solid rgba(255, 255, 255, 0.06)', paddingTop: '1rem' }}>
+                  <img
+                    src={t.avatar}
+                    alt={t.name}
+                    style={{ width: '48px', height: '48px', borderRadius: '50%', objectFit: 'cover' }}
+                  />
+                  <div>
+                    <h5 style={{ fontSize: '0.95rem', fontWeight: '700', color: '#FFFFFF' }}>{t.name}</h5>
+                    <p style={{ fontSize: '0.78rem', color: '#94A3B8' }}>{t.role}</p>
+                    <span style={{ fontSize: '0.72rem', color: '#06B6D4' }}>{t.company}</span>
+                  </div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 9. FREQUENTLY ASKED QUESTIONS SECTION (From user screenshot 2: Frequently Asked Questions) */}
+      <section style={{ padding: '4rem 0' }}>
+        <div className="container" style={{ maxWidth: '840px' }}>
+          <div style={{ textAlign: 'center', marginBottom: '3rem' }}>
+            <span style={{ fontSize: '0.8rem', fontWeight: '700', color: '#06B6D4', letterSpacing: '0.08em', textTransform: 'uppercase' }}>
+              COMMON QUESTIONS
+            </span>
+            <h2 style={{ fontSize: 'clamp(1.8rem, 3vw, 2.6rem)', fontWeight: '800', color: '#FFFFFF', marginTop: '6px' }}>
+              Frequently Asked Questions
+            </h2>
+          </div>
+
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
+            {faqs.map((faq, i) => {
+              const isOpen = openFaq === i;
+              return (
+                <div
+                  key={i}
+                  className="glass-panel"
+                  style={{
+                    borderRadius: '14px',
+                    border: isOpen ? '1px solid #6366F1' : '1px solid rgba(255, 255, 255, 0.08)',
+                    overflow: 'hidden',
+                    transition: 'border-color 0.2s ease'
+                  }}
+                >
+                  <button
+                    onClick={() => setOpenFaq(isOpen ? -1 : i)}
+                    style={{
+                      width: '100%',
+                      padding: '1.25rem 1.5rem',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'space-between',
+                      color: '#FFFFFF',
+                      fontSize: '1.05rem',
+                      fontWeight: '700',
+                      textAlign: 'left',
+                      cursor: 'pointer'
+                    }}
+                  >
+                    <span>{faq.q}</span>
+                    <ChevronDown
+                      size={20}
+                      color="#818CF8"
+                      style={{
+                        transform: isOpen ? 'rotate(180deg)' : 'rotate(0deg)',
+                        transition: 'transform 0.25s ease',
+                        flexShrink: 0,
+                        marginLeft: '12px'
+                      }}
+                    />
+                  </button>
+                  {isOpen && (
+                    <div style={{ padding: '0 1.5rem 1.25rem 1.5rem', color: '#94A3B8', fontSize: '0.95rem', lineHeight: 1.6 }}>
+                      {faq.a}
+                    </div>
+                  )}
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* 10. Newsletter-Style Visual CTA */}
       <section style={{ padding: '3rem 0 5rem 0' }}>
         <div className="container">
           <div
