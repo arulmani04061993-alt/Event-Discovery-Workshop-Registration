@@ -54,6 +54,7 @@ export const NotFound = () => {
         }}
       >
         <div
+          className="jumping-404"
           style={{
             fontSize: 'clamp(5rem, 10vw, 7.5rem)',
             fontWeight: '900',
@@ -63,7 +64,8 @@ export const NotFound = () => {
             WebkitTextFillColor: 'transparent',
             lineHeight: 1,
             marginBottom: '1rem',
-            letterSpacing: '-0.04em'
+            letterSpacing: '-0.04em',
+            display: 'inline-block'
           }}
         >
           404
@@ -117,6 +119,33 @@ export const NotFound = () => {
       <div style={{ marginTop: '2rem', fontSize: '0.82rem', color: '#64748B' }}>
         © {new Date().getFullYear()} STACKLY Technologies. All rights reserved.
       </div>
+
+      <style>{`
+        @keyframes jumpBounce {
+          0%, 100% {
+            transform: translateY(0) scale(1);
+            filter: drop-shadow(0 10px 15px rgba(6, 182, 212, 0.3));
+          }
+          30% {
+            transform: translateY(-28px) scale(1.05, 0.95);
+            filter: drop-shadow(0 25px 25px rgba(79, 70, 229, 0.5));
+          }
+          50% {
+            transform: translateY(0) scale(0.95, 1.05);
+          }
+          70% {
+            transform: translateY(-14px) scale(1.02, 0.98);
+          }
+          85% {
+            transform: translateY(0) scale(1);
+          }
+        }
+
+        .jumping-404 {
+          animation: jumpBounce 1.8s infinite ease-in-out;
+          transform-origin: bottom center;
+        }
+      `}</style>
     </div>
   );
 };
