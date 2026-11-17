@@ -123,7 +123,7 @@ export const EventDetails = () => {
                 display: 'inline-flex',
                 alignItems: 'center',
                 gap: '6px',
-                color: favorited ? '#F43F5E' : '#CBD5E1',
+                color: '#CBD5E1',
                 fontSize: '0.88rem',
                 padding: '6px 14px',
                 borderRadius: '8px',
@@ -131,8 +131,8 @@ export const EventDetails = () => {
                 border: '1px solid rgba(255, 255, 255, 0.08)'
               }}
             >
-              <Heart size={16} fill={favorited ? '#F43F5E' : 'none'} />
-              <span>{favorited ? 'Saved' : 'Save'}</span>
+              <Heart size={16} fill="none" color="#CBD5E1" />
+              <span>Save</span>
             </button>
           </div>
         </div>

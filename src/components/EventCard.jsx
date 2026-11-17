@@ -122,12 +122,12 @@ export const EventCard = ({ event }) => {
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
-              color: favorited ? '#F43F5E' : '#FFFFFF',
+              color: '#FFFFFF',
               boxShadow: '0 4px 10px rgba(0,0,0,0.4)',
               transition: 'all 0.2s ease'
             }}
           >
-            <Heart size={18} fill={favorited ? '#F43F5E' : 'none'} />
+            <Heart size={18} fill="none" color="#FFFFFF" />
           </button>
         </div>
 
