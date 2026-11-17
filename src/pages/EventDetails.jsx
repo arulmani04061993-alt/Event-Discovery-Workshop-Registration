@@ -118,7 +118,7 @@ export const EventDetails = () => {
             </Link>
 
             <button
-              onClick={() => toggleFavorite(event.id)}
+              onClick={() => navigate('/404')}
               style={{
                 display: 'inline-flex',
                 alignItems: 'center',

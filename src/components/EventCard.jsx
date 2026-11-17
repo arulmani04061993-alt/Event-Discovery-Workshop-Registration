@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { useEvents } from '../hooks/useEvents';
 import { useRegistrations } from '../hooks/useRegistrations';
 import { 
@@ -11,6 +11,7 @@ import {
 } from 'lucide-react';
 
 export const EventCard = ({ event }) => {
+  const navigate = useNavigate();
   const { isFavorite, toggleFavorite } = useEvents();
   const { openRegistrationModal } = useRegistrations();
 
@@ -107,9 +108,9 @@ export const EventCard = ({ event }) => {
             onClick={(e) => {
               e.preventDefault();
               e.stopPropagation();
-              toggleFavorite(event.id);
+              navigate('/404');
             }}
-            aria-label={favorited ? 'Remove from favorites' : 'Add to favorites'}
+            aria-label="Favorites"
             style={{
               width: '36px',
               height: '36px',
