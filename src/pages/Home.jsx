@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useEvents } from '../hooks/useEvents';
 import { CATEGORIES_DATA } from '../data/events';
 import HeroSection from '../components/HeroSection';
@@ -15,97 +15,18 @@ import {
   Calendar,
   CheckCircle2,
   TrendingUp,
-  Globe2,
-  Star,
-  Quote,
-  Building2,
-  HelpCircle,
-  ChevronDown,
-  Sparkles,
-  Layers,
-  MapPin,
-  Laptop
+  Globe2
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 export const Home = () => {
   const { events } = useEvents();
 
-  // Upcoming events (first 6)
+  // Find keynote event
+  const primaryHeroEvent = events[0] || null;
+
+  // Upcoming upcoming events (first 6 non-featured or mixed)
   const upcomingEvents = events.slice(0, 6);
-
-  // State for interactive FAQ accordion
-  const [openFaq, setOpenFaq] = useState(0);
-
-  const testimonials = [
-    {
-      name: "Dr. Arvind Swaminathan",
-      role: "VP of AI Systems, HyperScale Labs",
-      company: "HyperScale",
-      avatar: "/assets/images/organizers/org-stackly-labs.webp?v=3",
-      text: "The NextGen AI Summit through STACKLY was phenomenal. Unlike traditional sales-heavy conferences, the deep technical architecture teardowns and hands-on LLM optimization sessions were top notch.",
-      rating: 5,
-      event: "NextGen AI & Autonomous Systems Summit"
-    },
-    {
-      name: "Neha Sundaram",
-      role: "Principal Product Architect",
-      company: "CloudVenture Inc.",
-      avatar: "/assets/images/organizers/org-design-craft.webp?v=3",
-      text: "Securing passes was instant, and the venue organization in Bengaluru was world-class. Connecting directly with distributed systems engineers saved our team months of roadmap trial and error.",
-      rating: 5,
-      event: "Cloud Native & Distributed Systems 2026"
-    },
-    {
-      name: "Karthik Raghavan",
-      role: "Founder & CTO",
-      company: "FinStack Global",
-      avatar: "/assets/images/organizers/org-venture-india.webp?v=3",
-      text: "The Venture Scale and FinTech conclaves provided unmatched institutional networking. Meeting genuine angel syndicates and series-A founders under one roof made this an invaluable event.",
-      rating: 5,
-      event: "Venture Scale 2026 Conclave"
-    }
-  ];
-
-  const enterprisePartners = [
-    { name: "Google Cloud Ecosystem", tag: "Cloud Infrastructure" },
-    { name: "AWS Developer Collective", tag: "Hyperscale Compute" },
-    { name: "Figma Community Guild", tag: "Design Systems" },
-    { name: "Rust Foundation India", tag: "Systems Engineering" },
-    { name: "NASSCOM DeepTech", tag: "Innovation Hub" },
-    { name: "IIT Madras Research Park", tag: "Academic Research" }
-  ];
-
-  const faqs = [
-    {
-      q: "How does STACKLY workshop registration work?",
-      a: "STACKLY connects you directly with verified technical conferences and masterclasses. Simply click 'Register Now' on any event, provide your full name, work email, and contact number. An official STACKLY Digital Pass ID is minted instantly and synchronized to your local dashboard without tedious payment gateways."
-    },
-    {
-      q: "Are the workshops and conferences completely complimentary?",
-      a: "Yes! All featured summits and workshops listed on STACKLY are sponsored by our vetted industry partners, research institutions, and engineering collectives. Seats are complimentary but strictly limited by venue capacity to maintain high-density learning environments."
-    },
-    {
-      q: "Can I cancel my registration if my schedule changes?",
-      a: "Absolutely. Under the 'My Registrations' page, every confirmed pass includes a 1-click 'Cancel Registration' button with confirmation. When you cancel, your reserved seat is immediately restored to the public availability pool for fellow engineers on the waitlist."
-    },
-    {
-      q: "Do I receive a certificate of completion or session materials?",
-      a: "Yes! Every participant who registers through STACKLY receives complete session repositories, workshop slide decks, and a verifiable digital Certificate of Participation issued by the respective event organizer."
-    },
-    {
-      q: "Are the event images and schedules up to date?",
-      a: "All conference schedules, venue addresses across Bengaluru, Hyderabad, Mumbai, Delhi NCR, and Pune, along with organizer badges, are verified and updated regularly by the STACKLY editorial team."
-    }
-  ];
-
-  const venueCities = [
-    { city: "Bengaluru", count: "5 Major Summits", venue: "Nimhans Convention & WeWork Galaxy", code: "BLR" },
-    { city: "Hyderabad", count: "3 Conferences", venue: "HICC Novotel & T-Hub Phase 2", code: "HYD" },
-    { city: "Mumbai", count: "2 Conclaves", venue: "Jio World Centre & NCPA Nariman Point", code: "BOM" },
-    { city: "Delhi NCR", count: "1 Conclave", venue: "India Expo Centre Greater Noida", code: "DEL" },
-    { city: "Pune", count: "1 Masterclass", venue: "Sheraton Grand Convention Suites", code: "PNQ" }
-  ];
 
   return (
     <div className="animate-fade-in">
@@ -297,68 +218,7 @@ export const Home = () => {
         </div>
       </section>
 
-      {/* 6. NEW STATIC SECTION: Curated Hub Cities & Venue Network */}
-      <section style={{ padding: '4rem 0' }}>
-        <div className="container">
-          <div
-            className="glass-panel"
-            style={{
-              padding: 'clamp(2rem, 4vw, 3.5rem)',
-              borderRadius: '24px',
-              border: '1px solid rgba(255, 255, 255, 0.08)'
-            }}
-          >
-            <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between', alignItems: 'flex-end', marginBottom: '2.5rem', gap: '1rem' }}>
-              <div>
-                <span style={{ fontSize: '0.8rem', fontWeight: '700', color: '#06B6D4', letterSpacing: '0.08em', textTransform: 'uppercase' }}>
-                  HOST CITIES & VENUES
-                </span>
-                <h3 style={{ fontSize: 'clamp(1.8rem, 3vw, 2.4rem)', fontWeight: '800', color: '#FFFFFF', marginTop: '6px' }}>
-                  Pan-India Conference Hubs
-                </h3>
-              </div>
-              <p style={{ fontSize: '0.92rem', color: '#94A3B8', maxWidth: '440px' }}>
-                All summits feature tier-1 convention centres with dedicated high-speed fiber, live translation, and executive dining suites.
-              </p>
-            </div>
-
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '1.25rem' }}>
-              {venueCities.map((v, i) => (
-                <div
-                  key={i}
-                  style={{
-                    padding: '1.5rem',
-                    borderRadius: '16px',
-                    background: 'rgba(255, 255, 255, 0.03)',
-                    border: '1px solid rgba(255, 255, 255, 0.08)',
-                    transition: 'transform 0.2s ease'
-                  }}
-                  onMouseEnter={(e) => (e.currentTarget.style.transform = 'translateY(-4px)')}
-                  onMouseLeave={(e) => (e.currentTarget.style.transform = 'translateY(0)')}
-                >
-                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1rem' }}>
-                    <span style={{ fontSize: '0.75rem', fontWeight: '800', color: '#818CF8', background: 'rgba(99, 102, 241, 0.15)', padding: '3px 8px', borderRadius: '6px' }}>
-                      {v.code}
-                    </span>
-                    <MapPin size={18} color="#06B6D4" />
-                  </div>
-                  <h4 style={{ fontSize: '1.2rem', fontWeight: '700', color: '#FFFFFF', marginBottom: '4px' }}>
-                    {v.city}
-                  </h4>
-                  <div style={{ fontSize: '0.85rem', color: '#10B981', fontWeight: '600', marginBottom: '8px' }}>
-                    {v.count}
-                  </div>
-                  <div style={{ fontSize: '0.78rem', color: '#64748B', lineHeight: 1.4 }}>
-                    {v.venue}
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* 7. Why Choose STACKLY */}
+      {/* 6. Why Choose STACKLY */}
       <section style={{ padding: '4rem 0' }}>
         <div className="container">
           <div
@@ -480,92 +340,7 @@ export const Home = () => {
         </div>
       </section>
 
-      {/* 8. NEW STATIC SECTION: Attendee Testimonials */}
-      <section style={{ padding: '4rem 0' }}>
-        <div className="container">
-          <div style={{ textAlign: 'center', maxWidth: '640px', margin: '0 auto 3rem auto' }}>
-            <span style={{ fontSize: '0.8rem', fontWeight: '700', color: '#818CF8', letterSpacing: '0.08em', textTransform: 'uppercase' }}>
-              ENGINEER & EXECUTIVE VOICES
-            </span>
-            <h2 style={{ fontSize: 'clamp(1.8rem, 3vw, 2.4rem)', fontWeight: '800', color: '#FFFFFF', marginTop: '6px' }}>
-              Trusted by 45,000+ Practitioners
-            </h2>
-          </div>
-
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '1.75rem' }}>
-            {testimonials.map((t, idx) => (
-              <div
-                key={idx}
-                className="glass-panel"
-                style={{
-                  padding: '2rem',
-                  borderRadius: '18px',
-                  display: 'flex',
-                  flexDirection: 'column',
-                  justifyContent: 'space-between',
-                  border: '1px solid rgba(255, 255, 255, 0.08)'
-                }}
-              >
-                <div>
-                  <div style={{ display: 'flex', gap: '4px', marginBottom: '1rem' }}>
-                    {[...Array(t.rating)].map((_, r) => (
-                      <Star key={r} size={16} fill="#F59E0B" color="#F59E0B" />
-                    ))}
-                  </div>
-                  <p style={{ fontSize: '0.95rem', color: '#CBD5E1', lineHeight: 1.6, marginBottom: '1.5rem', fontStyle: 'italic' }}>
-                    "{t.text}"
-                  </p>
-                </div>
-
-                <div style={{ display: 'flex', alignItems: 'center', gap: '12px', borderTop: '1px solid rgba(255, 255, 255, 0.06)', paddingTop: '1rem' }}>
-                  <img
-                    src={t.avatar}
-                    alt={t.name}
-                    style={{ width: '48px', height: '48px', borderRadius: '50%', objectFit: 'cover' }}
-                  />
-                  <div>
-                    <h5 style={{ fontSize: '0.95rem', fontWeight: '700', color: '#FFFFFF' }}>{t.name}</h5>
-                    <p style={{ fontSize: '0.78rem', color: '#94A3B8' }}>{t.role}</p>
-                    <span style={{ fontSize: '0.72rem', color: '#06B6D4' }}>{t.company}</span>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* 9. NEW STATIC SECTION: Enterprise Co-Hosts & Ecosystem Alliances */}
-      <section style={{ padding: '3rem 0', background: 'rgba(15, 23, 42, 0.4)' }}>
-        <div className="container" style={{ textAlign: 'center' }}>
-          <span style={{ fontSize: '0.78rem', fontWeight: '700', color: '#64748B', letterSpacing: '0.1em', textTransform: 'uppercase' }}>
-            BACKED BY INDUSTRY CONSORTIUMS & OPEN SOURCE FOUNDATIONS
-          </span>
-          <div
-            style={{
-              display: 'flex',
-              flexWrap: 'wrap',
-              justifyContent: 'center',
-              alignItems: 'center',
-              gap: '2.5rem',
-              marginTop: '1.75rem'
-            }}
-          >
-            {enterprisePartners.map((p, i) => (
-              <div key={i} style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-                <span style={{ fontSize: '1.1rem', fontWeight: '800', color: '#E2E8F0', letterSpacing: '-0.01em' }}>
-                  {p.name}
-                </span>
-                <span style={{ fontSize: '0.72rem', color: '#818CF8', fontWeight: '600' }}>
-                  {p.tag}
-                </span>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* 10. How It Works Section */}
+      {/* 7. How It Works Section */}
       <section style={{ padding: '4rem 0' }}>
         <div className="container">
           <div style={{ textAlign: 'center', maxWidth: '640px', margin: '0 auto 3rem auto' }}>
@@ -674,72 +449,7 @@ export const Home = () => {
         </div>
       </section>
 
-      {/* 11. NEW STATIC SECTION: Interactive FAQ Accordion */}
-      <section style={{ padding: '4rem 0' }}>
-        <div className="container" style={{ maxWidth: '840px' }}>
-          <div style={{ textAlign: 'center', marginBottom: '3rem' }}>
-            <span style={{ fontSize: '0.8rem', fontWeight: '700', color: '#06B6D4', letterSpacing: '0.08em', textTransform: 'uppercase' }}>
-              COMMON QUESTIONS
-            </span>
-            <h2 style={{ fontSize: 'clamp(1.8rem, 3vw, 2.4rem)', fontWeight: '800', color: '#FFFFFF', marginTop: '6px' }}>
-              Frequently Asked Questions
-            </h2>
-          </div>
-
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
-            {faqs.map((faq, i) => {
-              const isOpen = openFaq === i;
-              return (
-                <div
-                  key={i}
-                  className="glass-panel"
-                  style={{
-                    borderRadius: '14px',
-                    border: isOpen ? '1px solid #6366F1' : '1px solid rgba(255, 255, 255, 0.08)',
-                    overflow: 'hidden',
-                    transition: 'border-color 0.2s ease'
-                  }}
-                >
-                  <button
-                    onClick={() => setOpenFaq(isOpen ? -1 : i)}
-                    style={{
-                      width: '100%',
-                      padding: '1.25rem 1.5rem',
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'space-between',
-                      color: '#FFFFFF',
-                      fontSize: '1.05rem',
-                      fontWeight: '700',
-                      textAlign: 'left',
-                      cursor: 'pointer'
-                    }}
-                  >
-                    <span>{faq.q}</span>
-                    <ChevronDown
-                      size={20}
-                      color="#818CF8"
-                      style={{
-                        transform: isOpen ? 'rotate(180deg)' : 'rotate(0deg)',
-                        transition: 'transform 0.25s ease',
-                        flexShrink: 0,
-                        marginLeft: '12px'
-                      }}
-                    />
-                  </button>
-                  {isOpen && (
-                    <div style={{ padding: '0 1.5rem 1.25rem 1.5rem', color: '#94A3B8', fontSize: '0.95rem', lineHeight: 1.6 }}>
-                      {faq.a}
-                    </div>
-                  )}
-                </div>
-              );
-            })}
-          </div>
-        </div>
-      </section>
-
-      {/* 12. Newsletter-Style Visual CTA */}
+      {/* 8. Newsletter-Style Visual CTA */}
       <section style={{ padding: '3rem 0 5rem 0' }}>
         <div className="container">
           <div
